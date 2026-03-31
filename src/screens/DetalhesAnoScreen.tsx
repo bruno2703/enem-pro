@@ -1,6 +1,7 @@
-import React from 'react';
-import {View, SectionList, StyleSheet} from 'react-native';
-import {Text, Card, Button, Chip} from 'react-native-paper';
+import React, {useEffect, useState} from 'react';
+import {View, SectionList, StyleSheet, Alert} from 'react-native';
+import {Text, Card, Button, Chip, IconButton} from 'react-native-paper';
+import {enqueueDownload, enqueueMultiple, isDownloaded, addDownloadListener} from '../services/downloadService';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
 import type {ManifestItem} from '../types/manifest';
@@ -92,10 +93,23 @@ function groupItems(items: ManifestItem[]): Section[] {
 export default function DetalhesAnoScreen({route}: Props) {
   const {ano, items} = route.params;
   const sections = groupItems(items);
+  const [, setTick] = useState(0);
+
+  useEffect(() => {
+    return addDownloadListener(() => setTick(t => t + 1));
+  }, []);
 
   function handlePress(item: ManifestItem) {
-    // TODO: Fase 3 — iniciar download do PDF
-    console.log('Download:', item.url);
+    enqueueDownload(item);
+  }
+
+  function handleDownloadAll() {
+    const notDownloaded = items.filter(i => !isDownloaded(i.url));
+    if (notDownloaded.length === 0) {
+      Alert.alert('Tudo baixado', 'Todos os arquivos deste ano já foram baixados.');
+      return;
+    }
+    enqueueMultiple(notDownloaded);
   }
 
   return (
@@ -127,20 +141,22 @@ export default function DetalhesAnoScreen({route}: Props) {
             <View style={styles.cardActions}>
               {group.prova && (
                 <Button
-                  mode="outlined"
+                  mode={isDownloaded(group.prova.url) ? 'contained' : 'outlined'}
                   compact
                   labelStyle={styles.btnLabel}
                   style={styles.btnProva}
+                  icon={isDownloaded(group.prova.url) ? 'check' : 'download'}
                   onPress={() => handlePress(group.prova!)}>
                   Prova
                 </Button>
               )}
               {group.gabarito && (
                 <Button
-                  mode="outlined"
+                  mode={isDownloaded(group.gabarito.url) ? 'contained' : 'outlined'}
                   compact
                   labelStyle={styles.btnLabel}
                   style={styles.btnGabarito}
+                  icon={isDownloaded(group.gabarito.url) ? 'check' : 'download'}
                   onPress={() => handlePress(group.gabarito!)}>
                   Gabarito
                 </Button>
@@ -151,12 +167,22 @@ export default function DetalhesAnoScreen({route}: Props) {
       )}
       ListHeaderComponent={
         <View style={styles.header}>
-          <Text variant="headlineSmall" style={styles.headerTitle}>
-            ENEM {ano}
-          </Text>
-          <Chip icon="information-outline" style={styles.chip}>
-            {items.length} arquivos
-          </Chip>
+          <View>
+            <Text variant="headlineSmall" style={styles.headerTitle}>
+              ENEM {ano}
+            </Text>
+            <Chip icon="information-outline" style={styles.chip}>
+              {items.length} arquivos
+            </Chip>
+          </View>
+          <Button
+            mode="contained"
+            icon="download"
+            compact
+            onPress={handleDownloadAll}
+            buttonColor="#1565C0">
+            Baixar Tudo
+          </Button>
         </View>
       }
     />
