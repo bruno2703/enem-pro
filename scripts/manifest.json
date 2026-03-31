@@ -1,0 +1,2846 @@
+{
+  "version": 1,
+  "generatedAt": "2026-03-31T01:59:02.729Z",
+  "items": [
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 5554330
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 5555624
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 5568042
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 5549045
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 2198297
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 5544941
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 6510246
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 6564545
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 6518863
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 6518325
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 2933264
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 6278223
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 2773672
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 2819146
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 2801806
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 2806246
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D1_CD9.pdf",
+      "tamanhoBytes": 2082158
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 3297605
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 3290876
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 3285415
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 3311516
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_PV_reaplicacao_PPL_D2_CD11.pdf",
+      "tamanhoBytes": 1679171
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 129591
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 130106
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 130245
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 129801
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 130094
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 130014
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 130708
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 130435
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 129835
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 130484
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 130344
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 137071
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 279125
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 288561
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 279624
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 287808
+    },
+    {
+      "ano": 2020,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D1_CD9.pdf",
+      "tamanhoBytes": 280268
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 280741
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 279989
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 279812
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 280027
+    },
+    {
+      "ano": 2020,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2020_GB_reaplicacao_PPL_D2_CD11.pdf",
+      "tamanhoBytes": 280436
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 2254970
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 1446995
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 1550518
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 1474308
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 1702547
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 1668039
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 1320710
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 1304398
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 1354632
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 1319681
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 1372385
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 1481381
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 1031255
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 1003550
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 1108279
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 1036308
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 926138
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 919486
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 897753
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 935667
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 224151
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 224945
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 225126
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 225040
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 224966
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 224635
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 225008
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 224908
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 224392
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 224957
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 224595
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 224524
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 209087
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 209609
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 209927
+    },
+    {
+      "ano": 2021,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 209738
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 208544
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 208398
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 207850
+    },
+    {
+      "ano": 2021,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2021_GB_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 208423
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 7714964
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 7947478
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 7348957
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 7961603
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 6023561
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 6539551
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 7058477
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 7005914
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 6854310
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 6831291
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 4121624
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 5397741
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 4876019
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 5108010
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 4510713
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 5128475
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 4537053
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 4490792
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 4345866
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 4352886
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 211180
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 212241
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 212622
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 212809
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 211483
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 210841
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 211394
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 211133
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 210705
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 212399
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 210883
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 210177
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 212661
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 213779
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 214130
+    },
+    {
+      "ano": 2022,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 214261
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 210586
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 210304
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 209646
+    },
+    {
+      "ano": 2022,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2022_GB_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 210339
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 4269374
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 4261148
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 4261663
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 4260481
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 2755641
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 4269488
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 3228403
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 3222429
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 3240950
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 3226694
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 2617662
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 3132490
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 2317390
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 2322864
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 2340294
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 2311885
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 2479346
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 2484827
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 2478248
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 2484949
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 592479
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 593395
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 593231
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 594382
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 594192
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 593270
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 593520
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 593141
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 592375
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 594274
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 593972
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 593078
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 594234
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 2089808
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 594937
+    },
+    {
+      "ano": 2023,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 596008
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 594431
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 594064
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 593312
+    },
+    {
+      "ano": 2023,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2023_GB_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 595204
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 4775958
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 4810400
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 4779754
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 4798911
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 4573759
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 4903365
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 4970445
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 5220633
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 5423727
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 5408396
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 4763435
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 5404943
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 5871792
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 5877605
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 5853930
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 5869998
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 4871408
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 4672650
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 4875026
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 4875743
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 118234
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 118605
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 119094
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 118771
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 118856
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 118594
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 121742
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 121447
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 120684
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 121438
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 121257
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 120923
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 120386
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 120720
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 121259
+    },
+    {
+      "ano": 2024,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 120907
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 123313
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 123132
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 122398
+    },
+    {
+      "ano": 2024,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2024_GB_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 123081
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 3306874
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 2784620
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 2393791
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 3308886
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 3337395
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 2848354
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 3122986
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 2702698
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 3649221
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 3644819
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 3497905
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 3165948
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 132331
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 133142
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 136787
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 132861
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 132911
+    },
+    {
+      "ano": 2025,
+      "dia": 1,
+      "tipo": "gabarito",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 132562
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 294764
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 303341
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 293450
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 301582
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 302825
+    },
+    {
+      "ano": 2025,
+      "dia": 2,
+      "tipo": "gabarito",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_GB_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 301580
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 5699702
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 5861134
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 5696703
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 5789115
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 1115072
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 6760145
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 6925571
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 6717184
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 6637338
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 6631565
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 1328054
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 2875657
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 200427
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 5714389
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 5714564
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 5720936
+    },
+    {
+      "ano": 2017,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D1_CD9.pdf",
+      "tamanhoBytes": 1296960
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 3273626
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 3250552
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 3247246
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 3247799
+    },
+    {
+      "ano": 2017,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2017/2017_PV_reaplicacao_PPL_D2_CD11.pdf",
+      "tamanhoBytes": 1300676
+    },
+    {
+      "ano": 2018,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 7353737
+    },
+    {
+      "ano": 2018,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 7142174
+    },
+    {
+      "ano": 2018,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 7021646
+    },
+    {
+      "ano": 2018,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 7029290
+    },
+    {
+      "ano": 2018,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 982937
+    },
+    {
+      "ano": 2018,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 7232327
+    },
+    {
+      "ano": 2018,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 4109043
+    },
+    {
+      "ano": 2018,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 6217868
+    },
+    {
+      "ano": 2018,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 6003014
+    },
+    {
+      "ano": 2018,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 6095268
+    },
+    {
+      "ano": 2018,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 1761921
+    },
+    {
+      "ano": 2018,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2018/2018_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 6097012
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D1_CD1.pdf",
+      "tamanhoBytes": 13616351
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D1_CD2.pdf",
+      "tamanhoBytes": 13492220
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D1_CD3.pdf",
+      "tamanhoBytes": 12946389
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D1_CD4.pdf",
+      "tamanhoBytes": 13564139
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D1_CD9.pdf",
+      "tamanhoBytes": 5549789
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD10",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D1_CD10.pdf",
+      "tamanhoBytes": 13017880
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D2_CD5.pdf",
+      "tamanhoBytes": 11019908
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D2_CD6.pdf",
+      "tamanhoBytes": 10988856
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D2_CD7.pdf",
+      "tamanhoBytes": 11071532
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D2_CD8.pdf",
+      "tamanhoBytes": 11219435
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD11",
+      "cor": "laranja",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D2_CD11.pdf",
+      "tamanhoBytes": 5750523
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD12",
+      "cor": "verde",
+      "aplicacao": "regular",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_impresso_D2_CD12.pdf",
+      "tamanhoBytes": 11047143
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD1",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D1_CD1.pdf",
+      "tamanhoBytes": 11409562
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD2",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D1_CD2.pdf",
+      "tamanhoBytes": 11399868
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD3",
+      "cor": "branco",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D1_CD3.pdf",
+      "tamanhoBytes": 11543936
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD4",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D1_CD4.pdf",
+      "tamanhoBytes": 11992083
+    },
+    {
+      "ano": 2019,
+      "dia": 1,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D1_CD9.pdf",
+      "tamanhoBytes": 5699134
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD5",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D2_CD5.pdf",
+      "tamanhoBytes": 8491782
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD6",
+      "cor": "cinza",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D2_CD6.pdf",
+      "tamanhoBytes": 8490596
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD7",
+      "cor": "azul",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D2_CD7.pdf",
+      "tamanhoBytes": 8511121
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD8",
+      "cor": "rosa",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D2_CD8.pdf",
+      "tamanhoBytes": 8515541
+    },
+    {
+      "ano": 2019,
+      "dia": 2,
+      "tipo": "prova",
+      "caderno": "CD9",
+      "cor": "amarelo",
+      "aplicacao": "ppl",
+      "url": "https://download.inep.gov.br/educacao_basica/enem/provas/2019/2019_PV_reaplicacao_PPL_D2_CD9.pdf",
+      "tamanhoBytes": 5609284
+    }
+  ]
+}
