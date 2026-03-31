@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import CatalogoScreen from '../screens/CatalogoScreen';
 import DetalhesAnoScreen from '../screens/DetalhesAnoScreen';
+import PdfViewerScreen from '../screens/PdfViewerScreen';
 import TreinoScreen from '../screens/TreinoScreen';
 import DownloadsScreen from '../screens/DownloadsScreen';
 import ConfigScreen from '../screens/ConfigScreen';
@@ -14,6 +15,7 @@ import type {ManifestItem} from '../types/manifest';
 export type RootStackParamList = {
   MainTabs: undefined;
   DetalhesAno: {ano: number; items: ManifestItem[]};
+  PdfViewer: {item: ManifestItem; pairedItem?: ManifestItem};
 };
 
 export type TabParamList = {
@@ -79,6 +81,11 @@ export default function AppNavigator() {
             headerTintColor: '#1565C0',
             headerTitleStyle: {fontWeight: 'bold'},
           })}
+        />
+        <Stack.Screen
+          name="PdfViewer"
+          component={PdfViewerScreen}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

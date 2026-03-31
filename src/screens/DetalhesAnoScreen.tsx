@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, SectionList, StyleSheet, Alert} from 'react-native';
-import {Text, Card, Button, Chip, IconButton} from 'react-native-paper';
+import {Text, Card, Button, Chip} from 'react-native-paper';
 import {enqueueDownload, enqueueMultiple, isDownloaded, addDownloadListener} from '../services/downloadService';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
@@ -90,7 +90,7 @@ function groupItems(items: ManifestItem[]): Section[] {
   return sections;
 }
 
-export default function DetalhesAnoScreen({route}: Props) {
+export default function DetalhesAnoScreen({route, navigation}: Props) {
   const {ano, items} = route.params;
   const sections = groupItems(items);
   const [, setTick] = useState(0);
@@ -99,8 +99,12 @@ export default function DetalhesAnoScreen({route}: Props) {
     return addDownloadListener(() => setTick(t => t + 1));
   }, []);
 
-  function handlePress(item: ManifestItem) {
-    enqueueDownload(item);
+  function handlePress(pressedItem: ManifestItem, pairedItem?: ManifestItem) {
+    if (isDownloaded(pressedItem.url)) {
+      navigation.navigate('PdfViewer', {item: pressedItem, pairedItem});
+    } else {
+      enqueueDownload(pressedItem);
+    }
   }
 
   function handleDownloadAll() {
@@ -146,7 +150,7 @@ export default function DetalhesAnoScreen({route}: Props) {
                   labelStyle={styles.btnLabel}
                   style={styles.btnProva}
                   icon={isDownloaded(group.prova.url) ? 'check' : 'download'}
-                  onPress={() => handlePress(group.prova!)}>
+                  onPress={() => handlePress(group.prova!, group.gabarito)}>
                   Prova
                 </Button>
               )}
@@ -157,7 +161,7 @@ export default function DetalhesAnoScreen({route}: Props) {
                   labelStyle={styles.btnLabel}
                   style={styles.btnGabarito}
                   icon={isDownloaded(group.gabarito.url) ? 'check' : 'download'}
-                  onPress={() => handlePress(group.gabarito!)}>
+                  onPress={() => handlePress(group.gabarito!, group.prova)}>
                   Gabarito
                 </Button>
               )}
