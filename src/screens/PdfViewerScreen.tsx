@@ -6,6 +6,7 @@ import ReactNativeBlobUtil from 'react-native-blob-util';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
 import {getLocalPath, isDownloaded} from '../services/downloadService';
+import {isFavorite, toggleFavorite, addToHistory} from '../services/favoritesService';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'PdfViewer'>;
 
@@ -14,9 +15,16 @@ export default function PdfViewerScreen({route, navigation}: Props) {
   const [activeTab, setActiveTab] = useState<string>(item.tipo);
   const [base64, setBase64] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [fav, setFav] = useState(isFavorite(item.url));
 
   const activeItem = activeTab === item.tipo ? item : pairedItem;
   const localPath = activeItem ? getLocalPath(activeItem.url) : undefined;
+
+  useEffect(() => {
+    if (activeItem) {
+      addToHistory(activeItem);
+    }
+  }, [activeItem?.url]);
 
   useEffect(() => {
     if (localPath) {
@@ -128,6 +136,12 @@ export default function PdfViewerScreen({route, navigation}: Props) {
             {title}
           </Text>
         </View>
+        <IconButton
+          icon={fav ? 'bookmark' : 'bookmark-outline'}
+          iconColor={fav ? '#FF8F00' : '#fff'}
+          size={24}
+          onPress={() => setFav(toggleFavorite(item))}
+        />
       </View>
 
       {/* Toggle Prova / Gabarito */}

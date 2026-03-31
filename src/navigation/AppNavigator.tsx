@@ -2,11 +2,13 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {TouchableOpacity} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import CatalogoScreen from '../screens/CatalogoScreen';
 import DetalhesAnoScreen from '../screens/DetalhesAnoScreen';
 import PdfViewerScreen from '../screens/PdfViewerScreen';
+import BibliotecaScreen from '../screens/BibliotecaScreen';
 import TreinoScreen from '../screens/TreinoScreen';
 import DownloadsScreen from '../screens/DownloadsScreen';
 import ConfigScreen from '../screens/ConfigScreen';
@@ -16,6 +18,7 @@ export type RootStackParamList = {
   MainTabs: undefined;
   DetalhesAno: {ano: number; items: ManifestItem[]};
   PdfViewer: {item: ManifestItem; pairedItem?: ManifestItem};
+  Biblioteca: undefined;
 };
 
 export type TabParamList = {
@@ -54,7 +57,16 @@ function MainTabs() {
       <Tab.Screen
         name="Provas"
         component={CatalogoScreen}
-        options={{title: 'Enem Pro'}}
+        options={({navigation: nav}) => ({
+          title: 'Enem Pro',
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => nav.getParent()?.navigate('Biblioteca')}
+              style={{marginRight: 12}}>
+              <MaterialIcons name="bookmark-border" size={26} color="#1565C0" />
+            </TouchableOpacity>
+          ),
+        })}
       />
       <Tab.Screen name="Treino" component={TreinoScreen} />
       <Tab.Screen name="Baixados" component={DownloadsScreen} />
@@ -86,6 +98,16 @@ export default function AppNavigator() {
           name="PdfViewer"
           component={PdfViewerScreen}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Biblioteca"
+          component={BibliotecaScreen}
+          options={{
+            title: 'Biblioteca',
+            headerStyle: {backgroundColor: '#FAFAFA'},
+            headerTintColor: '#1565C0',
+            headerTitleStyle: {fontWeight: 'bold'},
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
