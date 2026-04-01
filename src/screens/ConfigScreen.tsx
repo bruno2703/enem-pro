@@ -1,19 +1,195 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {Text} from 'react-native-paper';
+import React, {useState, useEffect, useCallback} from 'react';
+import {View, ScrollView, StyleSheet, Linking, Alert} from 'react-native';
+import {Text, Card, Switch, Button, SegmentedButtons, Divider} from 'react-native-paper';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import type {RootStackParamList} from '../navigation/AppNavigator';
+import {
+  isWifiOnly,
+  setWifiOnly,
+  getStorageUsed,
+  deleteAllDownloads,
+} from '../services/downloadService';
+import {createMMKV} from 'react-native-mmkv';
+
+const storage = createMMKV({id: 'enem-pro'});
+const THEME_KEY = 'app_theme';
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
 
 export default function ConfigScreen() {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const [wifiOnly, setWifiOnlyState] = useState(isWifiOnly());
+  const [storageUsed, setStorageUsed] = useState(0);
+  const [theme, setTheme] = useState(storage.getString(THEME_KEY) ?? 'claro');
+
+  useFocusEffect(
+    useCallback(() => {
+      refreshStorage();
+    }, []),
+  );
+
+  async function refreshStorage() {
+    const used = await getStorageUsed();
+    setStorageUsed(used);
+  }
+
+  function handleWifiToggle(value: boolean) {
+    setWifiOnly(value);
+    setWifiOnlyState(value);
+  }
+
+  function handleTheme(value: string) {
+    setTheme(value);
+    storage.set(THEME_KEY, value);
+    // TODO: implementar troca de tema real
+  }
+
+  function handleClearAll() {
+    Alert.alert('Limpar downloads', 'Deletar todos os arquivos baixados?', [
+      {text: 'Cancelar', style: 'cancel'},
+      {
+        text: 'Deletar',
+        style: 'destructive',
+        onPress: async () => {
+          await deleteAllDownloads();
+          refreshStorage();
+        },
+      },
+    ]);
+  }
+
   return (
-    <View style={styles.container}>
-      <Text variant="headlineMedium" style={styles.title}>
-        Ajustes
+    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      {/* Downloads */}
+      <Text variant="labelLarge" style={styles.sectionLabel}>
+        DOWNLOADS
       </Text>
-      <Text variant="bodyMedium">Configurações do app</Text>
-    </View>
+      <Card style={styles.card}>
+        <Card.Content>
+          <View style={styles.row}>
+            <Text variant="bodyLarge">Baixar somente no Wi-Fi</Text>
+            <Switch
+              value={wifiOnly}
+              onValueChange={handleWifiToggle}
+              color="#1565C0"
+            />
+          </View>
+          <Divider style={styles.divider} />
+          <View style={styles.row}>
+            <View>
+              <Text variant="bodyLarge">Armazenamento usado</Text>
+              <Text variant="bodySmall" style={styles.subtitle}>
+                {formatBytes(storageUsed)}
+              </Text>
+            </View>
+          </View>
+          <Divider style={styles.divider} />
+          <Button
+            mode="text"
+            textColor="#D32F2F"
+            icon="delete-outline"
+            onPress={handleClearAll}
+            contentStyle={styles.btnContent}>
+            Limpar todos os downloads
+          </Button>
+        </Card.Content>
+      </Card>
+
+      {/* Aparência */}
+      <Text variant="labelLarge" style={styles.sectionLabel}>
+        APARÊNCIA
+      </Text>
+      <Card style={styles.card}>
+        <Card.Content>
+          <Text variant="bodyLarge" style={styles.themeLabel}>
+            Tema
+          </Text>
+          <SegmentedButtons
+            value={theme}
+            onValueChange={handleTheme}
+            buttons={[
+              {value: 'claro', label: 'Claro'},
+              {value: 'escuro', label: 'Escuro'},
+              {value: 'sistema', label: 'Sistema'},
+            ]}
+          />
+        </Card.Content>
+      </Card>
+
+      {/* Sobre */}
+      <Text variant="labelLarge" style={styles.sectionLabel}>
+        SOBRE
+      </Text>
+      <Card style={styles.card}>
+        <Card.Content>
+          <View style={styles.row}>
+            <Text variant="bodyLarge">Versão do app</Text>
+            <Text variant="bodyMedium" style={styles.subtitle}>
+              1.0.0
+            </Text>
+          </View>
+          <Divider style={styles.divider} />
+          <Button
+            mode="text"
+            icon="shield-check-outline"
+            onPress={() => navigation.navigate('SobreLegal')}
+            contentStyle={styles.btnContent}
+            textColor="#333">
+            Fontes e avisos legais
+          </Button>
+          <Divider style={styles.divider} />
+          <Button
+            mode="text"
+            icon="code-tags"
+            onPress={() =>
+              Linking.openURL('https://github.com')
+            }
+            contentStyle={styles.btnContent}
+            textColor="#333">
+            Código aberto / Licenças
+          </Button>
+        </Card.Content>
+      </Card>
+
+      {/* Footer legal */}
+      <Text variant="bodySmall" style={styles.footer}>
+        Este aplicativo não é oficial e não possui vínculo com o INEP, MEC ou
+        Governo Federal.
+      </Text>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-  title: {marginBottom: 8, fontWeight: 'bold'},
+  container: {flex: 1, backgroundColor: '#FAFAFA'},
+  content: {padding: 16, paddingBottom: 32},
+  sectionLabel: {
+    color: '#888',
+    marginTop: 16,
+    marginBottom: 8,
+    letterSpacing: 1,
+  },
+  card: {borderRadius: 12, backgroundColor: '#fff', elevation: 1},
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  subtitle: {color: '#888', marginTop: 2},
+  divider: {marginVertical: 4},
+  themeLabel: {marginBottom: 8},
+  btnContent: {justifyContent: 'flex-start'},
+  footer: {
+    textAlign: 'center',
+    color: '#999',
+    marginTop: 24,
+    paddingHorizontal: 16,
+  },
 });
