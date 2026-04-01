@@ -10,15 +10,20 @@ import DetalhesAnoScreen from '../screens/DetalhesAnoScreen';
 import PdfViewerScreen from '../screens/PdfViewerScreen';
 import BibliotecaScreen from '../screens/BibliotecaScreen';
 import TreinoScreen from '../screens/TreinoScreen';
+import SimuladoQuestoesScreen from '../screens/SimuladoQuestoesScreen';
+import SimuladoResultadoScreen from '../screens/SimuladoResultadoScreen';
 import DownloadsScreen from '../screens/DownloadsScreen';
 import ConfigScreen from '../screens/ConfigScreen';
 import type {ManifestItem} from '../types/manifest';
+import type {SimuladoConfig, SimuladoResult} from '../types/treino';
 
 export type RootStackParamList = {
   MainTabs: undefined;
   DetalhesAno: {ano: number; items: ManifestItem[]};
   PdfViewer: {item: ManifestItem; pairedItem?: ManifestItem};
   Biblioteca: undefined;
+  SimuladoQuestoes: {config: SimuladoConfig};
+  SimuladoResultado: {result: SimuladoResult};
 };
 
 export type TabParamList = {
@@ -104,6 +109,21 @@ export default function AppNavigator() {
           component={BibliotecaScreen}
           options={{
             title: 'Biblioteca',
+            headerStyle: {backgroundColor: '#FAFAFA'},
+            headerTintColor: '#1565C0',
+            headerTitleStyle: {fontWeight: 'bold'},
+          }}
+        />
+        <Stack.Screen
+          name="SimuladoQuestoes"
+          component={SimuladoQuestoesScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SimuladoResultado"
+          component={SimuladoResultadoScreen}
+          options={{
+            title: 'Resultado',
             headerStyle: {backgroundColor: '#FAFAFA'},
             headerTintColor: '#1565C0',
             headerTitleStyle: {fontWeight: 'bold'},
