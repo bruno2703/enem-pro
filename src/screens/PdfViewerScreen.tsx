@@ -74,7 +74,7 @@ export default function PdfViewerScreen({route, navigation}: Props) {
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="file:///android_asset/pdfjs/pdf.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #444; display: flex; flex-direction: column; align-items: center; }
@@ -92,7 +92,7 @@ export default function PdfViewerScreen({route, navigation}: Props) {
       uint8[i] = pdfData.charCodeAt(i);
     }
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'file:///android_asset/pdfjs/pdf.worker.min.js';
 
     pdfjsLib.getDocument({data: uint8}).promise.then(function(pdf) {
       document.getElementById('info').textContent = pdf.numPages + ' páginas';

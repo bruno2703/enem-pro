@@ -10,10 +10,7 @@ import {
   getStorageUsed,
   deleteAllDownloads,
 } from '../services/downloadService';
-import {createMMKV} from 'react-native-mmkv';
-
-const storage = createMMKV({id: 'enem-pro'});
-const THEME_KEY = 'app_theme';
+import {useAppTheme} from '../../App';
 
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -24,9 +21,9 @@ function formatBytes(bytes: number): string {
 export default function ConfigScreen() {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const {mode: theme, setMode: setTheme} = useAppTheme();
   const [wifiOnly, setWifiOnlyState] = useState(isWifiOnly());
   const [storageUsed, setStorageUsed] = useState(0);
-  const [theme, setTheme] = useState(storage.getString(THEME_KEY) ?? 'claro');
 
   useFocusEffect(
     useCallback(() => {
@@ -45,9 +42,7 @@ export default function ConfigScreen() {
   }
 
   function handleTheme(value: string) {
-    setTheme(value);
-    storage.set(THEME_KEY, value);
-    // TODO: implementar troca de tema real
+    setTheme(value as any);
   }
 
   function handleClearAll() {

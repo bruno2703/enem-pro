@@ -201,6 +201,11 @@ export default function DownloadsScreen() {
             </Card.Content>
           </Card>
         )}
+        ListFooterComponent={
+          <Text variant="bodySmall" style={styles.footer}>
+            Este app não é oficial e não possui vínculo com o INEP, MEC ou Governo Federal.
+          </Text>
+        }
       />
     </View>
   );
@@ -245,4 +250,5 @@ const styles = StyleSheet.create({
   empty: {alignItems: 'center', marginTop: 60},
   emptyText: {color: '#666'},
   emptySubtext: {color: '#999', marginTop: 4},
+  footer: {textAlign: 'center', color: '#999', paddingVertical: 16, fontSize: 11},
 });
