@@ -177,7 +177,7 @@ async function downloadFile(dl: DownloadProgress, attempt = 1) {
     if (attempt < MAX_RETRIES) {
       dl.error = `Tentativa ${attempt}/${MAX_RETRIES} falhou, tentando novamente...`;
       notify();
-      await new Promise(r => setTimeout(r, RETRY_DELAY_MS));
+      await new Promise<void>(r => setTimeout(r, RETRY_DELAY_MS));
       return downloadFile(dl, attempt + 1);
     }
 

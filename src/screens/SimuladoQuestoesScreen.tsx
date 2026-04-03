@@ -170,7 +170,7 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
     lista.unshift(result);
     if (lista.length > 20) lista.length = 20;
     storage.set(HISTORICO_KEY, JSON.stringify(lista));
-    storage.delete(SIMULADO_PROGRESS_KEY);
+    storage.set(SIMULADO_PROGRESS_KEY, '');
 
     navigation.replace('SimuladoResultado', {result});
   }

@@ -115,6 +115,13 @@ export default function SimuladoResultadoScreen({route, navigation}: Props) {
 
       {/* Botões */}
       <Button
+        mode="outlined"
+        onPress={() => navigation.navigate('CorrecaoDetalhada', {result})}
+        style={styles.btn}
+        textColor="#1565C0">
+        Ver Correção Detalhada
+      </Button>
+      <Button
         mode="contained"
         onPress={() => navigation.popToTop()}
         style={styles.btn}

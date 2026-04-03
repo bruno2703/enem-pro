@@ -37,10 +37,23 @@ export default function TreinoScreen() {
   const [dia, setDia] = useState<number>(1);
   const [caderno, setCaderno] = useState<string>('CD1');
   const [lingua, setLingua] = useState<'ingles' | 'espanhol'>('ingles');
+  const [modo, setModo] = useState<'completo' | 'area'>('completo');
+  const [areaEscolhida, setAreaEscolhida] = useState<string | null>(null);
 
   const dias = ano ? getDiasDisponiveis(ano) : [];
   const cadernos = ano ? getCadernosDisponiveis(ano, dia) : [];
   const historico = getSimuladoHistorico();
+
+  // Get available areas for current selection
+  const currentConfig = ano ? getGabarito(ano, dia, caderno, lingua) : null;
+  const areasDisponiveis = currentConfig ? Object.keys(currentConfig.areas) : [];
+
+  const areaLabels: Record<string, string> = {
+    linguagens: 'Linguagens e Códigos',
+    humanas: 'Ciências Humanas',
+    natureza: 'Ciências da Natureza',
+    matematica: 'Matemática',
+  };
 
   function handleIniciar() {
     if (!ano) return;
@@ -52,6 +65,23 @@ export default function TreinoScreen() {
       );
       return;
     }
+
+    // Filter by area if needed
+    if (modo === 'area' && areaEscolhida) {
+      const range = config.areas[areaEscolhida];
+      if (range) {
+        const areaGabarito = config.gabarito.slice(range.inicio - 1, range.fim);
+        const areaConfig = {
+          ...config,
+          gabarito: areaGabarito,
+          totalQuestoes: areaGabarito.length,
+          areas: {[areaEscolhida]: {inicio: 1, fim: areaGabarito.length}},
+        };
+        navigation.navigate('SimuladoQuestoes', {config: areaConfig});
+        return;
+      }
+    }
+
     navigation.navigate('SimuladoQuestoes', {config});
   }
 
@@ -172,6 +202,44 @@ export default function TreinoScreen() {
         </Card.Content>
       </Card>
 
+      {/* Modo */}
+      <Card style={styles.card}>
+        <Card.Content>
+          <Text variant="titleSmall" style={styles.cardTitle}>
+            Modo
+          </Text>
+          <View style={styles.chipRow}>
+            <Chip
+              selected={modo === 'completo'}
+              onPress={() => {setModo('completo'); setAreaEscolhida(null);}}
+              style={[styles.chip, modo === 'completo' && styles.chipSelected]}
+              icon="clock-outline">
+              Simulado completo — {currentConfig?.totalQuestoes || 90} questões
+            </Chip>
+            <Chip
+              selected={modo === 'area'}
+              onPress={() => setModo('area')}
+              style={[styles.chip, modo === 'area' && styles.chipSelected]}
+              icon="filter-outline">
+              Por área
+            </Chip>
+          </View>
+          {modo === 'area' && (
+            <View style={[styles.chipRow, {marginTop: 8}]}>
+              {areasDisponiveis.map(area => (
+                <Chip
+                  key={area}
+                  selected={areaEscolhida === area}
+                  onPress={() => setAreaEscolhida(area)}
+                  style={[styles.chip, areaEscolhida === area && styles.chipSelected]}>
+                  {areaLabels[area] || area}
+                </Chip>
+              ))}
+            </View>
+          )}
+        </Card.Content>
+      </Card>
+
       {/* Iniciar */}
       <Button
         mode="contained"
@@ -179,7 +247,7 @@ export default function TreinoScreen() {
         style={styles.startBtn}
         labelStyle={styles.startBtnLabel}
         buttonColor="#1565C0"
-        disabled={!ano || cadernos.length === 0}>
+        disabled={!ano || cadernos.length === 0 || (modo === 'area' && !areaEscolhida)}>
         Iniciar Simulado
       </Button>
       <Text variant="bodySmall" style={styles.footer}>
