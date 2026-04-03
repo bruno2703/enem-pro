@@ -44,9 +44,12 @@ export default function TreinoScreen() {
   const cadernos = ano ? getCadernosDisponiveis(ano, dia) : [];
   const historico = getSimuladoHistorico();
 
-  // Check for in-progress simulado
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  // Check for in-progress simulado (re-check when refreshKey changes)
   const savedRaw = storage.getString('simulado_em_andamento');
   const savedProgress = savedRaw && savedRaw !== '' ? JSON.parse(savedRaw) : null;
+  const hasProgress = savedProgress && Object.values(savedProgress.respostas).some((v: any) => v !== null);
   const respondidas = savedProgress
     ? Object.values(savedProgress.respostas).filter((v: any) => v !== null).length
     : 0;
@@ -64,21 +67,28 @@ export default function TreinoScreen() {
 
   function handleContinuar() {
     if (!savedProgress) return;
-    // We just navigate - the questoes screen will pick up the saved progress
     const config = getGabarito(ano!, dia, caderno, lingua);
     if (config) {
       navigation.navigate('SimuladoQuestoes', {config});
     }
   }
 
-  function handleNovoSimulado() {
-    storage.set('simulado_em_andamento', '');
-    handleIniciar();
+  function handleDescartar() {
+    Alert.alert('Descartar simulado?', 'Suas respostas serão perdidas.', [
+      {text: 'Cancelar', style: 'cancel'},
+      {
+        text: 'Descartar',
+        style: 'destructive',
+        onPress: () => {
+          storage.set('simulado_em_andamento', '');
+          setRefreshKey(k => k + 1);
+        },
+      },
+    ]);
   }
 
   function handleIniciar() {
     if (!ano) return;
-    // Always clear old progress when starting fresh
     storage.set('simulado_em_andamento', '');
     const config = getGabarito(ano, dia, caderno, lingua);
     if (!config) {
@@ -115,7 +125,7 @@ export default function TreinoScreen() {
       </Text>
 
       {/* Simulado em andamento */}
-      {savedProgress && respondidas > 0 && (
+      {hasProgress && (
         <Card style={[styles.card, {borderLeftWidth: 4, borderLeftColor: '#FF8F00'}]}>
           <Card.Content>
             <Text variant="titleSmall" style={{fontWeight: 'bold', color: '#FF8F00'}}>
@@ -135,8 +145,8 @@ export default function TreinoScreen() {
               <Button
                 mode="outlined"
                 compact
-                textColor="#999"
-                onPress={handleNovoSimulado}>
+                textColor="#D32F2F"
+                onPress={handleDescartar}>
                 Descartar
               </Button>
             </View>
@@ -296,12 +306,22 @@ export default function TreinoScreen() {
       {/* Iniciar */}
       <Button
         mode="contained"
-        onPress={handleIniciar}
         style={styles.startBtn}
         labelStyle={styles.startBtnLabel}
         buttonColor="#1565C0"
-        disabled={!ano || cadernos.length === 0 || (modo === 'area' && !areaEscolhida)}>
-        Iniciar Simulado
+        disabled={!ano || cadernos.length === 0 || (modo === 'area' && !areaEscolhida)}
+        onPress={hasProgress
+          ? () => Alert.alert(
+              'Simulado em andamento',
+              'Iniciar um novo simulado vai descartar o anterior. Continuar?',
+              [
+                {text: 'Cancelar', style: 'cancel'},
+                {text: 'Novo Simulado', onPress: handleIniciar},
+              ],
+            )
+          : handleIniciar
+        }>
+        {hasProgress ? 'Novo Simulado' : 'Iniciar Simulado'}
       </Button>
       <Text variant="bodySmall" style={styles.footer}>
         Gabarito oficial será usado para correção
