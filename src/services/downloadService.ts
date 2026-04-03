@@ -124,13 +124,17 @@ async function downloadFile(dl: DownloadProgress) {
     }
 
     const dir = getPdfDir();
-    await ReactNativeBlobUtil.fs.mkdir(dir).catch(() => {}); // ignore if exists
+    await ReactNativeBlobUtil.fs.mkdir(dir).catch(() => {});
     const path = `${dir}/${fileNameFromItem(dl.item)}`;
+
+    // Use RNFetchBlob with Android-specific config to handle SSL
+    // Use HTTP instead of HTTPS to avoid INEP SSL certificate issues
+    const httpUrl = dl.url.replace('https://', 'http://');
 
     const task = ReactNativeBlobUtil.config({
       path,
       fileCache: true,
-    }).fetch('GET', dl.url);
+    }).fetch('GET', httpUrl);
 
     cancelTokens.set(dl.url, {
       cancel: () => task.cancel(),
@@ -154,7 +158,6 @@ async function downloadFile(dl: DownloadProgress) {
     dl.totalBytes = Number(stat.size);
     dl.receivedBytes = dl.totalBytes;
 
-    // Salvar no mapa
     const map = getDownloadedMap();
     map[dl.url] = res.path();
     saveDownloadedMap(map);
@@ -173,8 +176,10 @@ async function downloadFile(dl: DownloadProgress) {
 
 // API pública
 export function enqueueDownload(item: ManifestItem) {
+  // Remover entradas antigas com erro/canceladas do mesmo item
+  queue = queue.filter(d => d.url !== item.url || (d.status !== 'error' && d.status !== 'cancelled' && d.status !== 'done'));
   // Evitar duplicatas na fila
-  if (queue.some(d => d.url === item.url && d.status !== 'error' && d.status !== 'cancelled')) {
+  if (queue.some(d => d.url === item.url)) {
     return;
   }
   // Já baixado?

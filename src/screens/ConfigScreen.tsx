@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import {View, ScrollView, StyleSheet, Linking, Alert} from 'react-native';
-import {Text, Card, Switch, Button, SegmentedButtons, Divider} from 'react-native-paper';
+import {Text, Card, Switch, Button, Divider} from 'react-native-paper';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
@@ -10,7 +10,6 @@ import {
   getStorageUsed,
   deleteAllDownloads,
 } from '../services/downloadService';
-import {useAppTheme} from '../../App';
 
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -21,7 +20,6 @@ function formatBytes(bytes: number): string {
 export default function ConfigScreen() {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const {mode: theme, setMode: setTheme} = useAppTheme();
   const [wifiOnly, setWifiOnlyState] = useState(isWifiOnly());
   const [storageUsed, setStorageUsed] = useState(0);
 
@@ -39,10 +37,6 @@ export default function ConfigScreen() {
   function handleWifiToggle(value: boolean) {
     setWifiOnly(value);
     setWifiOnlyState(value);
-  }
-
-  function handleTheme(value: string) {
-    setTheme(value as any);
   }
 
   function handleClearAll() {
@@ -93,27 +87,6 @@ export default function ConfigScreen() {
             contentStyle={styles.btnContent}>
             Limpar todos os downloads
           </Button>
-        </Card.Content>
-      </Card>
-
-      {/* Aparência */}
-      <Text variant="labelLarge" style={styles.sectionLabel}>
-        APARÊNCIA
-      </Text>
-      <Card style={styles.card}>
-        <Card.Content>
-          <Text variant="bodyLarge" style={styles.themeLabel}>
-            Tema
-          </Text>
-          <SegmentedButtons
-            value={theme}
-            onValueChange={handleTheme}
-            buttons={[
-              {value: 'claro', label: 'Claro'},
-              {value: 'escuro', label: 'Escuro'},
-              {value: 'sistema', label: 'Sistema'},
-            ]}
-          />
         </Card.Content>
       </Card>
 
@@ -179,7 +152,6 @@ const styles = StyleSheet.create({
   },
   subtitle: {color: '#888', marginTop: 2},
   divider: {marginVertical: 4},
-  themeLabel: {marginBottom: 8},
   btnContent: {justifyContent: 'flex-start'},
   footer: {
     textAlign: 'center',

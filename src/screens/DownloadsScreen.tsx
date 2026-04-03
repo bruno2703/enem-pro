@@ -128,7 +128,7 @@ export default function DownloadsScreen() {
 
       <FlatList
         data={[...active, ...failed, ...completed]}
-        keyExtractor={item => item.url}
+        keyExtractor={(item, index) => item.url + index}
         contentContainerStyle={styles.list}
         ListEmptyComponent={
           <View style={styles.empty}>
