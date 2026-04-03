@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {View, ScrollView, StyleSheet, Alert} from 'react-native';
 import {Text, Chip, Button, Card} from 'react-native-paper';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
 import {
@@ -42,13 +42,21 @@ export default function TreinoScreen() {
 
   const dias = ano ? getDiasDisponiveis(ano) : [];
   const cadernos = ano ? getCadernosDisponiveis(ano, dia) : [];
-  const historico = getSimuladoHistorico();
+  const [historico, setHistorico] = useState(getSimuladoHistorico());
 
-  const [refreshKey, setRefreshKey] = useState(0);
+  // State for in-progress simulado
+  const [savedProgress, setSavedProgress] = useState<any>(null);
 
-  // Check for in-progress simulado (re-check when refreshKey changes)
-  const savedRaw = storage.getString('simulado_em_andamento');
-  const savedProgress = savedRaw && savedRaw !== '' ? JSON.parse(savedRaw) : null;
+  // Re-read progress and history every time screen gets focus
+  useFocusEffect(
+    useCallback(() => {
+      const raw = storage.getString('simulado_em_andamento');
+      const parsed = raw && raw !== '' ? JSON.parse(raw) : null;
+      setSavedProgress(parsed);
+      setHistorico(getSimuladoHistorico());
+    }, []),
+  );
+
   const hasProgress = savedProgress && Object.values(savedProgress.respostas).some((v: any) => v !== null);
   const respondidas = savedProgress
     ? Object.values(savedProgress.respostas).filter((v: any) => v !== null).length
@@ -81,7 +89,7 @@ export default function TreinoScreen() {
         style: 'destructive',
         onPress: () => {
           storage.set('simulado_em_andamento', '');
-          setRefreshKey(k => k + 1);
+          setSavedProgress(null);
         },
       },
     ]);
