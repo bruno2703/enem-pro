@@ -11,7 +11,7 @@ import {
   getGabarito,
 } from '../services/gabaritoService';
 import {createMMKV} from 'react-native-mmkv';
-import type {SimuladoResult} from '../types/treino';
+import type {SimuladoConfig, SimuladoResult} from '../types/treino';
 
 const storage = createMMKV({id: 'enem-pro'});
 const HISTORICO_KEY = 'simulado_historico';
@@ -44,6 +44,13 @@ export default function TreinoScreen() {
   const cadernos = ano ? getCadernosDisponiveis(ano, dia) : [];
   const historico = getSimuladoHistorico();
 
+  // Check for in-progress simulado
+  const savedRaw = storage.getString('simulado_em_andamento');
+  const savedProgress = savedRaw && savedRaw !== '' ? JSON.parse(savedRaw) : null;
+  const respondidas = savedProgress
+    ? Object.values(savedProgress.respostas).filter((v: any) => v !== null).length
+    : 0;
+
   // Get available areas for current selection
   const currentConfig = ano ? getGabarito(ano, dia, caderno, lingua) : null;
   const areasDisponiveis = currentConfig ? Object.keys(currentConfig.areas) : [];
@@ -55,8 +62,24 @@ export default function TreinoScreen() {
     matematica: 'Matemática',
   };
 
+  function handleContinuar() {
+    if (!savedProgress) return;
+    // We just navigate - the questoes screen will pick up the saved progress
+    const config = getGabarito(ano!, dia, caderno, lingua);
+    if (config) {
+      navigation.navigate('SimuladoQuestoes', {config});
+    }
+  }
+
+  function handleNovoSimulado() {
+    storage.set('simulado_em_andamento', '');
+    handleIniciar();
+  }
+
   function handleIniciar() {
     if (!ano) return;
+    // Always clear old progress when starting fresh
+    storage.set('simulado_em_andamento', '');
     const config = getGabarito(ano, dia, caderno, lingua);
     if (!config) {
       Alert.alert(
@@ -90,6 +113,36 @@ export default function TreinoScreen() {
       <Text variant="headlineSmall" style={styles.title}>
         Configure seu Treino
       </Text>
+
+      {/* Simulado em andamento */}
+      {savedProgress && respondidas > 0 && (
+        <Card style={[styles.card, {borderLeftWidth: 4, borderLeftColor: '#FF8F00'}]}>
+          <Card.Content>
+            <Text variant="titleSmall" style={{fontWeight: 'bold', color: '#FF8F00'}}>
+              Simulado em andamento
+            </Text>
+            <Text variant="bodySmall" style={{color: '#666', marginTop: 4}}>
+              {respondidas} questões respondidas — {Math.floor(savedProgress.tempoSegundos / 60)}min
+            </Text>
+            <View style={{flexDirection: 'row', gap: 8, marginTop: 12}}>
+              <Button
+                mode="contained"
+                compact
+                buttonColor="#FF8F00"
+                onPress={handleContinuar}>
+                Continuar
+              </Button>
+              <Button
+                mode="outlined"
+                compact
+                textColor="#999"
+                onPress={handleNovoSimulado}>
+                Descartar
+              </Button>
+            </View>
+          </Card.Content>
+        </Card>
+      )}
 
       {/* Ano */}
       <Card style={styles.card}>
