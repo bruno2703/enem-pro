@@ -15,6 +15,17 @@ import {createMMKV} from 'react-native-mmkv';
 
 const storage = createMMKV({id: 'enem-pro'});
 const HISTORICO_KEY = 'simulado_historico';
+const SIMULADO_PROGRESS_KEY = 'simulado_em_andamento';
+
+interface SavedProgress {
+  respostas: Record<number, string | null>;
+  tempoSegundos: number;
+  configKey: string;
+}
+
+function getConfigKey(config: any): string {
+  return `${config.ano}_${config.dia}_${config.caderno}_${config.lingua}`;
+}
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SimuladoQuestoes'>;
 
@@ -61,14 +72,29 @@ const QuestionRow = React.memo(
 
 export default function SimuladoQuestoesScreen({route, navigation}: Props) {
   const {config} = route.params;
-  const [respostas, setRespostas] = useState<Record<number, string | null>>({});
-  const [tempo, setTempo] = useState(0);
+  const configKey = getConfigKey(config);
+
+  // Restaurar progresso salvo
+  const savedRaw = storage.getString(SIMULADO_PROGRESS_KEY);
+  const saved: SavedProgress | null = savedRaw ? JSON.parse(savedRaw) : null;
+  const hasSaved = saved && saved.configKey === configKey;
+
+  const [respostas, setRespostas] = useState<Record<number, string | null>>(
+    hasSaved ? saved.respostas : {},
+  );
+  const [tempo, setTempo] = useState(hasSaved ? saved.tempoSegundos : 0);
   const [pausado, setPausado] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const startTimeRef = useRef(Date.now());
+  const startTimeRef = useRef(Date.now() - (hasSaved ? saved.tempoSegundos * 1000 : 0));
+
+  // Salvar progresso a cada mudança de resposta
+  useEffect(() => {
+    const progress: SavedProgress = {respostas, tempoSegundos: tempo, configKey};
+    storage.set(SIMULADO_PROGRESS_KEY, JSON.stringify(progress));
+  }, [respostas, tempo]);
 
   useEffect(() => {
-    startTimeRef.current = Date.now();
+    startTimeRef.current = Date.now() - tempo * 1000;
     timerRef.current = setInterval(() => {
       if (!pausado) {
         setTempo(Math.floor((Date.now() - startTimeRef.current) / 1000));
@@ -138,12 +164,13 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
       brancos,
     };
 
-    // Salvar no histórico
+    // Salvar no histórico e limpar progresso
     const historico = storage.getString(HISTORICO_KEY);
     const lista: SimuladoResult[] = historico ? JSON.parse(historico) : [];
     lista.unshift(result);
     if (lista.length > 20) lista.length = 20;
     storage.set(HISTORICO_KEY, JSON.stringify(lista));
+    storage.delete(SIMULADO_PROGRESS_KEY);
 
     navigation.replace('SimuladoResultado', {result});
   }

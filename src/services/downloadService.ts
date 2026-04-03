@@ -113,7 +113,10 @@ async function processQueue() {
   }
 }
 
-async function downloadFile(dl: DownloadProgress) {
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 2000;
+
+async function downloadFile(dl: DownloadProgress, attempt = 1) {
   try {
     const network = await checkNetwork();
     if (!network.allowed) {
@@ -127,7 +130,6 @@ async function downloadFile(dl: DownloadProgress) {
     await ReactNativeBlobUtil.fs.mkdir(dir).catch(() => {});
     const path = `${dir}/${fileNameFromItem(dl.item)}`;
 
-    // Use RNFetchBlob with Android-specific config to handle SSL
     // Use HTTP instead of HTTPS to avoid INEP SSL certificate issues
     const httpUrl = dl.url.replace('https://', 'http://');
 
@@ -165,11 +167,22 @@ async function downloadFile(dl: DownloadProgress) {
     cancelTokens.delete(dl.url);
     notify();
   } catch (err: any) {
-    if (dl.status !== 'cancelled') {
-      dl.status = 'error';
-      dl.error = err?.message || 'Erro ao baixar';
-    }
     cancelTokens.delete(dl.url);
+
+    if (dl.status === 'cancelled') {
+      notify();
+      return;
+    }
+
+    if (attempt < MAX_RETRIES) {
+      dl.error = `Tentativa ${attempt}/${MAX_RETRIES} falhou, tentando novamente...`;
+      notify();
+      await new Promise(r => setTimeout(r, RETRY_DELAY_MS));
+      return downloadFile(dl, attempt + 1);
+    }
+
+    dl.status = 'error';
+    dl.error = err?.message || 'Erro ao baixar';
     notify();
   }
 }
