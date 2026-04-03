@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StatusBar} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {PaperProvider, MD3LightTheme} from 'react-native-paper';
+import BootSplash from 'react-native-bootsplash';
 import AppNavigator from './src/navigation/AppNavigator';
 import OnboardingScreen, {isOnboardingDone} from './src/screens/OnboardingScreen';
 
@@ -17,6 +18,10 @@ const theme = {
 
 export default function App() {
   const [showOnboarding, setShowOnboarding] = useState(!isOnboardingDone());
+
+  useEffect(() => {
+    BootSplash.hide({fade: true});
+  }, []);
 
   return (
     <SafeAreaProvider>
