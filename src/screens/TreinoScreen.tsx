@@ -4,29 +4,18 @@ import {Text, Chip, Button, Card} from 'react-native-paper';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
-import {
-  getAnosDisponiveis,
-  getDiasDisponiveis,
-  getCadernosDisponiveis,
-  getGabarito,
-} from '../services/gabaritoService';
+import {getAnosDisponiveis, getGabarito} from '../services/gabaritoService';
 import {createMMKV} from 'react-native-mmkv';
-import type {SimuladoConfig, SimuladoResult} from '../types/treino';
+import type {SimuladoResult} from '../types/treino';
 
 const storage = createMMKV({id: 'enem-pro'});
 const HISTORICO_KEY = 'simulado_historico';
+const CADERNO_FIXO = 'CD1';
 
 export function getSimuladoHistorico(): SimuladoResult[] {
   const raw = storage.getString(HISTORICO_KEY);
   return raw ? JSON.parse(raw) : [];
 }
-
-const COR_MAP: Record<string, string> = {
-  azul: '#1565C0',
-  amarelo: '#F9A825',
-  branco: '#9E9E9E',
-  rosa: '#E91E63',
-};
 
 export default function TreinoScreen() {
   const navigation =
@@ -35,13 +24,10 @@ export default function TreinoScreen() {
 
   const [ano, setAno] = useState<number | null>(anos[0] ?? null);
   const [dia, setDia] = useState<number>(1);
-  const [caderno, setCaderno] = useState<string>('CD1');
   const [lingua, setLingua] = useState<'ingles' | 'espanhol'>('ingles');
   const [modo, setModo] = useState<'completo' | 'area'>('completo');
   const [areaEscolhida, setAreaEscolhida] = useState<string | null>(null);
 
-  const dias = ano ? getDiasDisponiveis(ano) : [];
-  const cadernos = ano ? getCadernosDisponiveis(ano, dia) : [];
   const [historico, setHistorico] = useState(getSimuladoHistorico());
 
   // State for in-progress simulado
@@ -63,7 +49,7 @@ export default function TreinoScreen() {
     : 0;
 
   // Get available areas for current selection
-  const currentConfig = ano ? getGabarito(ano, dia, caderno, lingua) : null;
+  const currentConfig = ano ? getGabarito(ano, dia, CADERNO_FIXO, lingua) : null;
   const areasDisponiveis = currentConfig ? Object.keys(currentConfig.areas) : [];
 
   const areaLabels: Record<string, string> = {
@@ -75,7 +61,7 @@ export default function TreinoScreen() {
 
   function handleContinuar() {
     if (!savedProgress) return;
-    const config = getGabarito(ano!, dia, caderno, lingua);
+    const config = getGabarito(ano!, dia, CADERNO_FIXO, lingua);
     if (config) {
       navigation.navigate('SimuladoQuestoes', {config});
     }
@@ -98,7 +84,7 @@ export default function TreinoScreen() {
   function handleIniciar() {
     if (!ano) return;
     storage.set('simulado_em_andamento', '');
-    const config = getGabarito(ano, dia, caderno, lingua);
+    const config = getGabarito(ano, dia, CADERNO_FIXO, lingua);
     if (!config) {
       Alert.alert(
         'Gabarito não disponível',
@@ -280,7 +266,7 @@ export default function TreinoScreen() {
         style={styles.startBtn}
         labelStyle={styles.startBtnLabel}
         buttonColor="#1565C0"
-        disabled={!ano || cadernos.length === 0 || (modo === 'area' && !areaEscolhida)}
+        disabled={!ano || (modo === 'area' && !areaEscolhida)}
         onPress={hasProgress
           ? () => Alert.alert(
               'Simulado em andamento',

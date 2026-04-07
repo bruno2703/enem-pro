@@ -7,7 +7,6 @@ import {
   IconButton,
   Switch,
   Button,
-  Divider,
 } from 'react-native-paper';
 import {
   addDownloadListener,

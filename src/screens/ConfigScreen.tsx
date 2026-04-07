@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useCallback} from 'react';
 import {View, ScrollView, StyleSheet, Linking, Alert} from 'react-native';
 import {Text, Card, Switch, Button, Divider} from 'react-native-paper';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';

@@ -9,20 +9,6 @@ export function getAnosDisponiveis(): number[] {
     .sort((a, b) => b - a);
 }
 
-export function getDiasDisponiveis(ano: number): number[] {
-  const anoData = gabaritos[String(ano)];
-  if (!anoData) return [];
-  return Object.keys(anoData)
-    .map(k => Number(k.replace('dia', '')))
-    .sort();
-}
-
-export function getCadernosDisponiveis(ano: number, dia: number): string[] {
-  const diaData = gabaritos[String(ano)]?.[`dia${dia}`];
-  if (!diaData) return [];
-  return Object.keys(diaData).sort();
-}
-
 export function getGabarito(
   ano: number,
   dia: number,
