@@ -207,43 +207,6 @@ export default function TreinoScreen() {
         </Card.Content>
       </Card>
 
-      {/* Caderno */}
-      <Card style={styles.card}>
-        <Card.Content>
-          <Text variant="titleSmall" style={styles.cardTitle}>
-            Escolha o caderno
-          </Text>
-          <View style={styles.chipRow}>
-            {cadernos.map(c => {
-              const config = getGabarito(ano!, dia, c, lingua);
-              const cor = config?.cor || 'azul';
-              return (
-                <Chip
-                  key={c}
-                  selected={caderno === c}
-                  onPress={() => setCaderno(c)}
-                  style={[styles.chip, caderno === c && styles.chipSelected]}
-                  icon={() => (
-                    <View
-                      style={[
-                        styles.corDot,
-                        {backgroundColor: COR_MAP[cor] || '#999'},
-                      ]}
-                    />
-                  )}>
-                  {cor.charAt(0).toUpperCase() + cor.slice(1)}
-                </Chip>
-              );
-            })}
-            {cadernos.length === 0 && (
-              <Text variant="bodySmall" style={styles.noData}>
-                Nenhum caderno disponível
-              </Text>
-            )}
-          </View>
-        </Card.Content>
-      </Card>
-
       {/* Língua */}
       <Card style={styles.card}>
         <Card.Content>
