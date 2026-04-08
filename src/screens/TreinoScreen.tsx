@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import {View, ScrollView, StyleSheet, Alert} from 'react-native';
-import {Text, Chip, Button, Card} from 'react-native-paper';
+import {Text, Chip, Button, Card, IconButton} from 'react-native-paper';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
@@ -15,6 +15,11 @@ const CADERNO_FIXO = 'CD1';
 export function getSimuladoHistorico(): SimuladoResult[] {
   const raw = storage.getString(HISTORICO_KEY);
   return raw ? JSON.parse(raw) : [];
+}
+
+export function deleteSimulado(data: string) {
+  const lista = getSimuladoHistorico().filter(r => r.data !== data);
+  storage.set(HISTORICO_KEY, JSON.stringify(lista));
 }
 
 export default function TreinoScreen() {
@@ -65,6 +70,20 @@ export default function TreinoScreen() {
     if (config) {
       navigation.navigate('SimuladoQuestoes', {config});
     }
+  }
+
+  function handleExcluirHistorico(data: string) {
+    Alert.alert('Excluir simulado?', 'Esta ação não pode ser desfeita.', [
+      {text: 'Cancelar', style: 'cancel'},
+      {
+        text: 'Excluir',
+        style: 'destructive',
+        onPress: () => {
+          deleteSimulado(data);
+          setHistorico(getSimuladoHistorico());
+        },
+      },
+    ]);
   }
 
   function handleDescartar() {
@@ -193,34 +212,36 @@ export default function TreinoScreen() {
         </Card.Content>
       </Card>
 
-      {/* Língua */}
-      <Card style={styles.card}>
-        <Card.Content>
-          <Text variant="titleSmall" style={styles.cardTitle}>
-            Língua estrangeira
-          </Text>
-          <View style={styles.chipRow}>
-            <Chip
-              selected={lingua === 'ingles'}
-              onPress={() => setLingua('ingles')}
-              style={[
-                styles.chip,
-                lingua === 'ingles' && styles.chipSelected,
-              ]}>
-              🇬🇧 Inglês
-            </Chip>
-            <Chip
-              selected={lingua === 'espanhol'}
-              onPress={() => setLingua('espanhol')}
-              style={[
-                styles.chip,
-                lingua === 'espanhol' && styles.chipSelected,
-              ]}>
-              🇪🇸 Espanhol
-            </Chip>
-          </View>
-        </Card.Content>
-      </Card>
+      {/* Língua — só para o 1º dia */}
+      {dia === 1 && (
+        <Card style={styles.card}>
+          <Card.Content>
+            <Text variant="titleSmall" style={styles.cardTitle}>
+              Língua estrangeira
+            </Text>
+            <View style={styles.chipRow}>
+              <Chip
+                selected={lingua === 'ingles'}
+                onPress={() => setLingua('ingles')}
+                style={[
+                  styles.chip,
+                  lingua === 'ingles' && styles.chipSelected,
+                ]}>
+                🇬🇧 Inglês
+              </Chip>
+              <Chip
+                selected={lingua === 'espanhol'}
+                onPress={() => setLingua('espanhol')}
+                style={[
+                  styles.chip,
+                  lingua === 'espanhol' && styles.chipSelected,
+                ]}>
+                🇪🇸 Espanhol
+              </Chip>
+            </View>
+          </Card.Content>
+        </Card>
+      )}
 
       {/* Modo */}
       <Card style={styles.card}>
@@ -287,16 +308,26 @@ export default function TreinoScreen() {
       {/* Histórico */}
       {historico.length > 0 && (
         <View style={styles.historicoSection}>
-          <Text variant="titleMedium" style={styles.historicoTitle}>
-            Histórico
-          </Text>
+          <View style={styles.historicoHeader}>
+            <Text variant="titleMedium" style={styles.historicoTitle}>
+              Histórico
+            </Text>
+            {historico.length > 5 && (
+              <Button
+                mode="text"
+                compact
+                onPress={() => navigation.navigate('Historico')}>
+                Ver tudo
+              </Button>
+            )}
+          </View>
           {historico.slice(0, 5).map((r, i) => (
             <Card
               key={i}
               style={styles.historicoCard}
               onPress={() => navigation.navigate('SimuladoResultado', {result: r})}>
               <Card.Content style={styles.historicoRow}>
-                <View>
+                <View style={{flex: 1}}>
                   <Text variant="bodyMedium">
                     ENEM {r.config.ano} — {r.config.dia}º Dia —{' '}
                     {r.config.cor.charAt(0).toUpperCase() + r.config.cor.slice(1)}
@@ -320,6 +351,12 @@ export default function TreinoScreen() {
                   ]}>
                   {Math.round((r.acertos / r.config.totalQuestoes) * 100)}%
                 </Text>
+                <IconButton
+                  icon="delete-outline"
+                  size={20}
+                  iconColor="#D32F2F"
+                  onPress={() => handleExcluirHistorico(r.data)}
+                />
               </Card.Content>
             </Card>
           ))}
@@ -344,7 +381,8 @@ const styles = StyleSheet.create({
   startBtnLabel: {fontSize: 16, fontWeight: 'bold'},
   footer: {textAlign: 'center', color: '#888', marginTop: 8},
   historicoSection: {marginTop: 32},
-  historicoTitle: {fontWeight: 'bold', color: '#333', marginBottom: 8},
+  historicoHeader: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8},
+  historicoTitle: {fontWeight: 'bold', color: '#333'},
   historicoCard: {marginBottom: 8, borderRadius: 12, backgroundColor: '#fff', elevation: 1},
   historicoRow: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'},
   historicoDate: {color: '#888', marginTop: 2},

@@ -70,7 +70,12 @@ export default function SimuladoResultadoScreen({route, navigation}: Props) {
       {areasResult.map(({area, acertos: aa, total}) => {
         const areaPct = aa / total;
         return (
-          <Card key={area} style={styles.areaCard}>
+          <Card
+            key={area}
+            style={styles.areaCard}
+            onPress={() =>
+              navigation.navigate('CorrecaoDetalhada', {result, filterArea: area})
+            }>
             <Card.Content>
               <View style={styles.areaRow}>
                 <Text variant="bodyMedium" style={styles.areaLabel}>
@@ -119,7 +124,7 @@ export default function SimuladoResultadoScreen({route, navigation}: Props) {
         onPress={() => navigation.navigate('CorrecaoDetalhada', {result})}
         style={styles.btn}
         textColor="#1565C0">
-        Ver Correção Detalhada
+        Ver questões individuais
       </Button>
       <Button
         mode="contained"

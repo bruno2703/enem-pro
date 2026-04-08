@@ -8,10 +8,17 @@ import type {RootStackParamList} from '../navigation/AppNavigator';
 type Props = NativeStackScreenProps<RootStackParamList, 'CorrecaoDetalhada'>;
 
 export default function CorrecaoDetalhadaScreen({route}: Props) {
-  const {result} = route.params;
+  const {result, filterArea} = route.params;
   const {config, respostas} = result;
 
-  const questions = Array.from({length: config.totalQuestoes}, (_, i) => i + 1);
+  const allQuestions = Array.from({length: config.totalQuestoes}, (_, i) => i + 1);
+  const questions = filterArea && config.areas[filterArea]
+    ? allQuestions.filter(
+        n =>
+          n >= config.areas[filterArea].inicio &&
+          n <= config.areas[filterArea].fim,
+      )
+    : allQuestions;
 
   // Find which area a question belongs to
   function getArea(num: number): string {

@@ -14,6 +14,7 @@ import SimuladoQuestoesScreen from '../screens/SimuladoQuestoesScreen';
 import SimuladoResultadoScreen from '../screens/SimuladoResultadoScreen';
 import SobreLegalScreen from '../screens/SobreLegalScreen';
 import CorrecaoDetalhadaScreen from '../screens/CorrecaoDetalhadaScreen';
+import HistoricoScreen from '../screens/HistoricoScreen';
 import DownloadsScreen from '../screens/DownloadsScreen';
 import ConfigScreen from '../screens/ConfigScreen';
 import type {ManifestItem} from '../types/manifest';
@@ -27,7 +28,8 @@ export type RootStackParamList = {
   SimuladoQuestoes: {config: SimuladoConfig};
   SimuladoResultado: {result: SimuladoResult};
   SobreLegal: undefined;
-  CorrecaoDetalhada: {result: SimuladoResult};
+  CorrecaoDetalhada: {result: SimuladoResult; filterArea?: string};
+  Historico: undefined;
 };
 
 export type TabParamList = {
@@ -138,6 +140,16 @@ export default function AppNavigator() {
           component={CorrecaoDetalhadaScreen}
           options={{
             title: 'Correção Detalhada',
+            headerStyle: {backgroundColor: '#FAFAFA'},
+            headerTintColor: '#1565C0',
+            headerTitleStyle: {fontWeight: 'bold'},
+          }}
+        />
+        <Stack.Screen
+          name="Historico"
+          component={HistoricoScreen}
+          options={{
+            title: 'Histórico de Simulados',
             headerStyle: {backgroundColor: '#FAFAFA'},
             headerTintColor: '#1565C0',
             headerTitleStyle: {fontWeight: 'bold'},
