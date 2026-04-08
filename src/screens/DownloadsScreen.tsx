@@ -1,13 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {View, FlatList, StyleSheet, Alert} from 'react-native';
-import {
-  Text,
-  Card,
-  ProgressBar,
-  IconButton,
-  Switch,
-  Button,
-} from 'react-native-paper';
+import {View, FlatList, StyleSheet} from 'react-native';
+import {Text, Card, ProgressBar, IconButton, Button} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
@@ -15,10 +8,6 @@ import {
   addDownloadListener,
   cancelDownload,
   deleteDownload,
-  deleteAllDownloads,
-  getStorageUsed,
-  isWifiOnly,
-  setWifiOnly,
   clearCompletedFromQueue,
   DownloadProgress,
 } from '../services/downloadService';
@@ -40,44 +29,13 @@ function itemLabel(dl: DownloadProgress): string {
 
 export default function DownloadsScreen() {
   const [downloads, setDownloads] = useState<DownloadProgress[]>([]);
-  const [storageUsed, setStorageUsed] = useState(0);
-  const [wifiOnly, setWifiOnlyState] = useState(isWifiOnly());
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const unsub = addDownloadListener(setDownloads);
-    refreshStorage();
     return unsub;
   }, []);
-
-  useEffect(() => {
-    refreshStorage();
-  }, [downloads]);
-
-  async function refreshStorage() {
-    const used = await getStorageUsed();
-    setStorageUsed(used);
-  }
-
-  function handleWifiToggle(value: boolean) {
-    setWifiOnly(value);
-    setWifiOnlyState(value);
-  }
-
-  function handleClearAll() {
-    Alert.alert('Limpar tudo', 'Deletar todos os downloads?', [
-      {text: 'Cancelar', style: 'cancel'},
-      {
-        text: 'Deletar',
-        style: 'destructive',
-        onPress: async () => {
-          await deleteAllDownloads();
-          refreshStorage();
-        },
-      },
-    ]);
-  }
 
   const active = downloads.filter(
     d => d.status === 'downloading' || d.status === 'queued',
@@ -106,37 +64,6 @@ export default function DownloadsScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Header com espaço e Wi-Fi */}
-      <Card style={styles.summaryCard}>
-        <Card.Content>
-          <View style={styles.summaryRow}>
-            <View>
-              <Text variant="bodySmall" style={styles.label}>
-                Espaço utilizado
-              </Text>
-              <Text variant="headlineSmall" style={styles.storageText}>
-                {formatBytes(storageUsed)}
-              </Text>
-            </View>
-            <Button
-              mode="text"
-              textColor="#D32F2F"
-              compact
-              onPress={handleClearAll}>
-              Limpar tudo
-            </Button>
-          </View>
-          <View style={styles.wifiRow}>
-            <Text variant="bodyMedium">Somente Wi-Fi</Text>
-            <Switch
-              value={wifiOnly}
-              onValueChange={handleWifiToggle}
-              color="#1565C0"
-            />
-          </View>
-        </Card.Content>
-      </Card>
-
       {active.length > 0 && (
         <Button
           mode="text"
@@ -231,27 +158,8 @@ export default function DownloadsScreen() {
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: '#FAFAFA'},
-  summaryCard: {
-    margin: 16,
-    borderRadius: 12,
-    backgroundColor: '#FFFFFF',
-    elevation: 2,
-  },
-  summaryRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  label: {color: '#888'},
-  storageText: {fontWeight: 'bold', color: '#1565C0'},
-  wifiRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 12,
-  },
-  clearBtn: {marginHorizontal: 16, alignSelf: 'flex-start'},
-  list: {paddingHorizontal: 16, paddingBottom: 16},
+  clearBtn: {marginHorizontal: 16, marginTop: 8, alignSelf: 'flex-start'},
+  list: {paddingHorizontal: 16, paddingBottom: 16, paddingTop: 8},
   itemCard: {
     marginBottom: 8,
     borderRadius: 12,

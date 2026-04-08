@@ -265,6 +265,97 @@ export async function getStorageUsed(): Promise<number> {
   return total;
 }
 
+export interface StorageBreakdown {
+  total: number;
+  byYear: Array<{ano: number; size: number; count: number}>;
+  byType: {
+    prova: {size: number; count: number};
+    gabarito: {size: number; count: number};
+  };
+}
+
+export async function getStorageBreakdown(): Promise<StorageBreakdown> {
+  const map = getDownloadedMap();
+  const yearMap = new Map<number, {size: number; count: number}>();
+  const byType = {
+    prova: {size: 0, count: 0},
+    gabarito: {size: 0, count: 0},
+  };
+  let total = 0;
+
+  for (const path of Object.values(map)) {
+    try {
+      const stat = await ReactNativeBlobUtil.fs.stat(path);
+      const size = Number(stat.size);
+      total += size;
+
+      const filename = path.split('/').pop() || '';
+      const parts = filename.replace('.pdf', '').split('_');
+      const ano = parseInt(parts[0], 10);
+      const tipo = parts[1];
+
+      if (!isNaN(ano)) {
+        const entry = yearMap.get(ano) || {size: 0, count: 0};
+        entry.size += size;
+        entry.count++;
+        yearMap.set(ano, entry);
+      }
+
+      if (tipo === 'prova' || tipo === 'gabarito') {
+        byType[tipo].size += size;
+        byType[tipo].count++;
+      }
+    } catch {
+      // arquivo pode ter sido deletado externamente
+    }
+  }
+
+  const byYear = [...yearMap.entries()]
+    .map(([ano, info]) => ({ano, ...info}))
+    .sort((a, b) => b.ano - a.ano);
+
+  return {total, byYear, byType};
+}
+
+export async function deleteByYear(ano: number) {
+  const map = getDownloadedMap();
+  const toDelete: string[] = [];
+  for (const [url, path] of Object.entries(map)) {
+    const filename = path.split('/').pop() || '';
+    const fileAno = parseInt(filename.split('_')[0], 10);
+    if (fileAno === ano) {
+      await ReactNativeBlobUtil.fs.unlink(path).catch(() => {});
+      toDelete.push(url);
+    }
+  }
+  for (const url of toDelete) {
+    delete map[url];
+  }
+  saveDownloadedMap(map);
+  queue = queue.filter(d => d.item.ano !== ano);
+  notify();
+}
+
+export async function keepOnlyLastNYears(n: number) {
+  const breakdown = await getStorageBreakdown();
+  const yearsToDelete = breakdown.byYear.slice(n).map(y => y.ano);
+  for (const ano of yearsToDelete) {
+    await deleteByYear(ano);
+  }
+}
+
+export async function getDeviceStorage(): Promise<{free: number; total: number} | null> {
+  try {
+    const df: any = await ReactNativeBlobUtil.fs.df();
+    return {
+      free: Number(df.internal_free ?? df.free ?? 0),
+      total: Number(df.internal_total ?? df.total ?? 0),
+    };
+  } catch {
+    return null;
+  }
+}
+
 export function clearCompletedFromQueue() {
   queue = queue.filter(d => d.status !== 'done' && d.status !== 'cancelled' && d.status !== 'error');
   notify();

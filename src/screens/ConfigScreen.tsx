@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
-import {View, ScrollView, StyleSheet, Linking, Alert} from 'react-native';
+import {View, ScrollView, StyleSheet, Linking, Alert, TouchableOpacity} from 'react-native';
 import {Text, Card, Switch, Button, Divider} from 'react-native-paper';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
@@ -70,14 +71,27 @@ export default function ConfigScreen() {
             />
           </View>
           <Divider style={styles.divider} />
-          <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Storage')}
+            style={styles.row}
+            activeOpacity={0.6}>
             <View>
               <Text variant="bodyLarge">Armazenamento usado</Text>
               <Text variant="bodySmall" style={styles.subtitle}>
                 {formatBytes(storageUsed)}
               </Text>
             </View>
-          </View>
+            <MaterialIcons name="chevron-right" size={24} color="#999" />
+          </TouchableOpacity>
+          <Divider style={styles.divider} />
+          <Button
+            mode="text"
+            icon="folder-open-outline"
+            onPress={() => navigation.navigate('Downloads')}
+            contentStyle={styles.btnContent}
+            textColor="#1565C0">
+            Gerenciar downloads
+          </Button>
           <Divider style={styles.divider} />
           <Button
             mode="text"

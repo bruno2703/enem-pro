@@ -15,6 +15,7 @@ import SimuladoResultadoScreen from '../screens/SimuladoResultadoScreen';
 import SobreLegalScreen from '../screens/SobreLegalScreen';
 import CorrecaoDetalhadaScreen from '../screens/CorrecaoDetalhadaScreen';
 import HistoricoScreen from '../screens/HistoricoScreen';
+import StorageScreen from '../screens/StorageScreen';
 import DownloadsScreen from '../screens/DownloadsScreen';
 import ConfigScreen from '../screens/ConfigScreen';
 import type {ManifestItem} from '../types/manifest';
@@ -30,12 +31,13 @@ export type RootStackParamList = {
   SobreLegal: undefined;
   CorrecaoDetalhada: {result: SimuladoResult; filterArea?: string};
   Historico: undefined;
+  Downloads: undefined;
+  Storage: undefined;
 };
 
 export type TabParamList = {
   Provas: undefined;
   Simulado: undefined;
-  Baixados: undefined;
   Ajustes: undefined;
 };
 
@@ -45,7 +47,6 @@ const Tab = createBottomTabNavigator<TabParamList>();
 const TAB_ICONS: Record<string, string> = {
   Provas: 'description',
   Simulado: 'model-training',
-  Baixados: 'download-for-offline',
   Ajustes: 'settings',
 };
 
@@ -80,7 +81,6 @@ function MainTabs() {
         })}
       />
       <Tab.Screen name="Simulado" component={TreinoScreen} />
-      <Tab.Screen name="Baixados" component={DownloadsScreen} />
       <Tab.Screen name="Ajustes" component={ConfigScreen} />
     </Tab.Navigator>
   );
@@ -140,6 +140,26 @@ export default function AppNavigator() {
           component={CorrecaoDetalhadaScreen}
           options={{
             title: 'Correção Detalhada',
+            headerStyle: {backgroundColor: '#FAFAFA'},
+            headerTintColor: '#1565C0',
+            headerTitleStyle: {fontWeight: 'bold'},
+          }}
+        />
+        <Stack.Screen
+          name="Storage"
+          component={StorageScreen}
+          options={{
+            title: 'Armazenamento',
+            headerStyle: {backgroundColor: '#FAFAFA'},
+            headerTintColor: '#1565C0',
+            headerTitleStyle: {fontWeight: 'bold'},
+          }}
+        />
+        <Stack.Screen
+          name="Downloads"
+          component={DownloadsScreen}
+          options={{
+            title: 'Gerenciar downloads',
             headerStyle: {backgroundColor: '#FAFAFA'},
             headerTintColor: '#1565C0',
             headerTitleStyle: {fontWeight: 'bold'},
