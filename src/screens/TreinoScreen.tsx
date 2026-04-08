@@ -115,7 +115,7 @@ export default function TreinoScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text variant="headlineSmall" style={styles.title}>
-        Configure seu Treino
+        Configure seu Simulado
       </Text>
 
       {/* Simulado em andamento */}

@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {View, StyleSheet, Alert, ActivityIndicator} from 'react-native';
 import {Text, IconButton, SegmentedButtons} from 'react-native-paper';
 import {WebView} from 'react-native-webview';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ReactNativeBlobUtil from 'react-native-blob-util';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
@@ -16,6 +17,30 @@ export default function PdfViewerScreen({route, navigation}: Props) {
   const [base64, setBase64] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [fav, setFav] = useState(isFavorite(item.url));
+  const [chromeVisible, setChromeVisible] = useState(true);
+  const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const insets = useSafeAreaInsets();
+
+  function scheduleHide() {
+    if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+    hideTimerRef.current = setTimeout(() => setChromeVisible(false), 3000);
+  }
+
+  useEffect(() => {
+    scheduleHide();
+    return () => {
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+    };
+  }, []);
+
+  function handleWebViewMessage() {
+    setChromeVisible(prev => {
+      const next = !prev;
+      if (next) scheduleHide();
+      else if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+      return next;
+    });
+  }
 
   const activeItem = activeTab === item.tipo ? item : pairedItem;
   const localPath = activeItem ? getLocalPath(activeItem.url) : undefined;
@@ -116,6 +141,24 @@ export default function PdfViewerScreen({route, navigation}: Props) {
     }).catch(function(err) {
       document.getElementById('info').textContent = 'Erro: ' + err.message;
     });
+
+    // Tap detection: distinguish tap from scroll
+    var startY = 0, startX = 0, moved = false;
+    document.addEventListener('touchstart', function(e) {
+      startY = e.touches[0].clientY;
+      startX = e.touches[0].clientX;
+      moved = false;
+    }, {passive: true});
+    document.addEventListener('touchmove', function(e) {
+      var dy = Math.abs(e.touches[0].clientY - startY);
+      var dx = Math.abs(e.touches[0].clientX - startX);
+      if (dy > 10 || dx > 10) moved = true;
+    }, {passive: true});
+    document.addEventListener('touchend', function() {
+      if (!moved && window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage('tap');
+      }
+    }, {passive: true});
   </script>
 </body>
 </html>`
@@ -124,28 +167,30 @@ export default function PdfViewerScreen({route, navigation}: Props) {
   return (
     <View style={styles.container}>
       {/* Top bar */}
-      <View style={styles.topBar}>
-        <IconButton
-          icon="arrow-left"
-          iconColor="#fff"
-          size={24}
-          onPress={() => navigation.goBack()}
-        />
-        <View style={styles.topBarTitle}>
-          <Text variant="titleSmall" style={styles.topBarText} numberOfLines={1}>
-            {title}
-          </Text>
+      {chromeVisible && (
+        <View style={[styles.topBar, {paddingTop: insets.top + 8}]}>
+          <IconButton
+            icon="arrow-left"
+            iconColor="#fff"
+            size={24}
+            onPress={() => navigation.goBack()}
+          />
+          <View style={styles.topBarTitle}>
+            <Text variant="titleSmall" style={styles.topBarText} numberOfLines={1}>
+              {title}
+            </Text>
+          </View>
+          <IconButton
+            icon={fav ? 'bookmark' : 'bookmark-outline'}
+            iconColor={fav ? '#FF8F00' : '#fff'}
+            size={24}
+            onPress={() => setFav(toggleFavorite(item))}
+          />
         </View>
-        <IconButton
-          icon={fav ? 'bookmark' : 'bookmark-outline'}
-          iconColor={fav ? '#FF8F00' : '#fff'}
-          size={24}
-          onPress={() => setFav(toggleFavorite(item))}
-        />
-      </View>
+      )}
 
       {/* Toggle Prova / Gabarito */}
-      {pairedItem && (
+      {chromeVisible && pairedItem && (
         <View style={styles.toggleContainer}>
           <SegmentedButtons
             value={activeTab}
@@ -174,6 +219,7 @@ export default function PdfViewerScreen({route, navigation}: Props) {
           domStorageEnabled
           allowFileAccess
           mixedContentMode="always"
+          onMessage={handleWebViewMessage}
         />
       ) : (
         <View style={styles.center}>

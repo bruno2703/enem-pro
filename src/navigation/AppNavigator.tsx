@@ -32,7 +32,7 @@ export type RootStackParamList = {
 
 export type TabParamList = {
   Provas: undefined;
-  Treino: undefined;
+  Simulado: undefined;
   Baixados: undefined;
   Ajustes: undefined;
 };
@@ -42,7 +42,7 @@ const Tab = createBottomTabNavigator<TabParamList>();
 
 const TAB_ICONS: Record<string, string> = {
   Provas: 'description',
-  Treino: 'model-training',
+  Simulado: 'model-training',
   Baixados: 'download-for-offline',
   Ajustes: 'settings',
 };
@@ -77,7 +77,7 @@ function MainTabs() {
           ),
         })}
       />
-      <Tab.Screen name="Treino" component={TreinoScreen} />
+      <Tab.Screen name="Simulado" component={TreinoScreen} />
       <Tab.Screen name="Baixados" component={DownloadsScreen} />
       <Tab.Screen name="Ajustes" component={ConfigScreen} />
     </Tab.Navigator>

@@ -8,6 +8,9 @@ import {
   Switch,
   Button,
 } from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import type {RootStackParamList} from '../navigation/AppNavigator';
 import {
   addDownloadListener,
   cancelDownload,
@@ -39,6 +42,8 @@ export default function DownloadsScreen() {
   const [downloads, setDownloads] = useState<DownloadProgress[]>([]);
   const [storageUsed, setStorageUsed] = useState(0);
   const [wifiOnly, setWifiOnlyState] = useState(isWifiOnly());
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const unsub = addDownloadListener(setDownloads);
@@ -78,6 +83,23 @@ export default function DownloadsScreen() {
     d => d.status === 'downloading' || d.status === 'queued',
   );
   const completed = downloads.filter(d => d.status === 'done');
+
+  function handleOpenPdf(dl: DownloadProgress) {
+    const {item} = dl;
+    const pairedTipo = item.tipo === 'prova' ? 'gabarito' : 'prova';
+    const paired = completed.find(
+      d =>
+        d.item.ano === item.ano &&
+        d.item.dia === item.dia &&
+        d.item.caderno === item.caderno &&
+        d.item.cor === item.cor &&
+        d.item.tipo === pairedTipo,
+    );
+    navigation.navigate('PdfViewer', {
+      item,
+      pairedItem: paired?.item,
+    });
+  }
   const failed = downloads.filter(
     d => d.status === 'error' || d.status === 'cancelled',
   );
@@ -140,7 +162,9 @@ export default function DownloadsScreen() {
           </View>
         }
         renderItem={({item: dl}) => (
-          <Card style={styles.itemCard}>
+          <Card
+            style={styles.itemCard}
+            onPress={dl.status === 'done' ? () => handleOpenPdf(dl) : undefined}>
             <Card.Content>
               <View style={styles.itemRow}>
                 <View style={styles.itemInfo}>
@@ -200,11 +224,6 @@ export default function DownloadsScreen() {
             </Card.Content>
           </Card>
         )}
-        ListFooterComponent={
-          <Text variant="bodySmall" style={styles.footer}>
-            Este app não é oficial e não possui vínculo com o INEP, MEC ou Governo Federal.
-          </Text>
-        }
       />
     </View>
   );
@@ -249,5 +268,4 @@ const styles = StyleSheet.create({
   empty: {alignItems: 'center', marginTop: 60},
   emptyText: {color: '#666'},
   emptySubtext: {color: '#999', marginTop: 4},
-  footer: {textAlign: 'center', color: '#999', paddingVertical: 16, fontSize: 11},
 });
