@@ -4,7 +4,7 @@ import {Text, Card, IconButton} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
-import {deleteSimulado, getSimuladoHistorico} from './TreinoScreen';
+import {deleteSimulado, getSimuladoHistorico} from '../services/simuladoService';
 
 export default function HistoricoScreen() {
   const navigation =
@@ -25,11 +25,24 @@ export default function HistoricoScreen() {
     ]);
   }
 
+  if (historico.length === 0) {
+    return (
+      <View style={styles.empty}>
+        <Text variant="bodyLarge" style={styles.emptyText}>
+          Nenhum simulado no histórico
+        </Text>
+        <Text variant="bodySmall" style={styles.emptySubtext}>
+          Quando você finalizar um simulado, ele aparecerá aqui.
+        </Text>
+      </View>
+    );
+  }
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {historico.map((r, i) => (
+      {historico.map(r => (
         <Card
-          key={i}
+          key={r.data}
           style={styles.card}
           onPress={() => navigation.navigate('SimuladoResultado', {result: r})}>
           <Card.Content style={styles.row}>
@@ -74,4 +87,7 @@ const styles = StyleSheet.create({
   card: {marginBottom: 8, borderRadius: 12, backgroundColor: '#fff', elevation: 1},
   row: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'},
   date: {color: '#888', marginTop: 2},
+  empty: {flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FAFAFA', padding: 32},
+  emptyText: {color: '#666'},
+  emptySubtext: {color: '#999', marginTop: 4, textAlign: 'center'},
 });

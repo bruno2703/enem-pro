@@ -1,9 +1,7 @@
 import ReactNativeBlobUtil from 'react-native-blob-util';
 import NetInfo from '@react-native-community/netinfo';
-import {createMMKV} from 'react-native-mmkv';
 import type {ManifestItem} from '../types/manifest';
-
-const storage = createMMKV({id: 'enem-pro'});
+import {storage} from './storage';
 const WIFI_ONLY_KEY = 'download_wifi_only';
 const DOWNLOADED_KEY = 'downloaded_files'; // JSON map: url → local path
 

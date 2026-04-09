@@ -16,6 +16,7 @@ import SobreLegalScreen from '../screens/SobreLegalScreen';
 import CorrecaoDetalhadaScreen from '../screens/CorrecaoDetalhadaScreen';
 import HistoricoScreen from '../screens/HistoricoScreen';
 import StorageScreen from '../screens/StorageScreen';
+import LicensesScreen from '../screens/LicensesScreen';
 import DownloadsScreen from '../screens/DownloadsScreen';
 import ConfigScreen from '../screens/ConfigScreen';
 import type {ManifestItem} from '../types/manifest';
@@ -33,6 +34,7 @@ export type RootStackParamList = {
   Historico: undefined;
   Downloads: undefined;
   Storage: undefined;
+  Licenses: undefined;
 };
 
 export type TabParamList = {
@@ -170,6 +172,16 @@ export default function AppNavigator() {
           component={HistoricoScreen}
           options={{
             title: 'Histórico de Simulados',
+            headerStyle: {backgroundColor: '#FAFAFA'},
+            headerTintColor: '#1565C0',
+            headerTitleStyle: {fontWeight: 'bold'},
+          }}
+        />
+        <Stack.Screen
+          name="Licenses"
+          component={LicensesScreen}
+          options={{
+            title: 'Bibliotecas',
             headerStyle: {backgroundColor: '#FAFAFA'},
             headerTintColor: '#1565C0',
             headerTitleStyle: {fontWeight: 'bold'},

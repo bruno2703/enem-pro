@@ -5,22 +5,14 @@ import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
 import {getAnosDisponiveis, getGabarito} from '../services/gabaritoService';
-import {createMMKV} from 'react-native-mmkv';
-import type {SimuladoResult} from '../types/treino';
+import {
+  getSimuladoHistorico,
+  deleteSimulado,
+  getSimuladoProgress,
+  clearSimuladoProgress,
+} from '../services/simuladoService';
 
-const storage = createMMKV({id: 'enem-pro'});
-const HISTORICO_KEY = 'simulado_historico';
 const CADERNO_FIXO = 'CD1';
-
-export function getSimuladoHistorico(): SimuladoResult[] {
-  const raw = storage.getString(HISTORICO_KEY);
-  return raw ? JSON.parse(raw) : [];
-}
-
-export function deleteSimulado(data: string) {
-  const lista = getSimuladoHistorico().filter(r => r.data !== data);
-  storage.set(HISTORICO_KEY, JSON.stringify(lista));
-}
 
 export default function TreinoScreen() {
   const navigation =
@@ -41,9 +33,7 @@ export default function TreinoScreen() {
   // Re-read progress and history every time screen gets focus
   useFocusEffect(
     useCallback(() => {
-      const raw = storage.getString('simulado_em_andamento');
-      const parsed = raw && raw !== '' ? JSON.parse(raw) : null;
-      setSavedProgress(parsed);
+      setSavedProgress(getSimuladoProgress());
       setHistorico(getSimuladoHistorico());
     }, []),
   );
@@ -93,7 +83,7 @@ export default function TreinoScreen() {
         text: 'Descartar',
         style: 'destructive',
         onPress: () => {
-          storage.set('simulado_em_andamento', '');
+          clearSimuladoProgress();
           setSavedProgress(null);
         },
       },
@@ -102,7 +92,7 @@ export default function TreinoScreen() {
 
   function handleIniciar() {
     if (!ano) return;
-    storage.set('simulado_em_andamento', '');
+    clearSimuladoProgress();
     const config = getGabarito(ano, dia, CADERNO_FIXO, lingua);
     if (!config) {
       Alert.alert(
@@ -301,9 +291,6 @@ export default function TreinoScreen() {
         }>
         {hasProgress ? 'Novo Simulado' : 'Iniciar Simulado'}
       </Button>
-      <Text variant="bodySmall" style={styles.footer}>
-        Gabarito oficial será usado para correção
-      </Text>
 
       {/* Histórico */}
       {historico.length > 0 && (
@@ -379,7 +366,6 @@ const styles = StyleSheet.create({
   noData: {color: '#999'},
   startBtn: {marginTop: 16, borderRadius: 24, paddingVertical: 4},
   startBtnLabel: {fontSize: 16, fontWeight: 'bold'},
-  footer: {textAlign: 'center', color: '#888', marginTop: 8},
   historicoSection: {marginTop: 32},
   historicoHeader: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8},
   historicoTitle: {fontWeight: 'bold', color: '#333'},

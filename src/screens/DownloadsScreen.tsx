@@ -41,6 +41,9 @@ export default function DownloadsScreen() {
     d => d.status === 'downloading' || d.status === 'queued',
   );
   const completed = downloads.filter(d => d.status === 'done');
+  const failed = downloads.filter(
+    d => d.status === 'error' || d.status === 'cancelled',
+  );
 
   function handleOpenPdf(dl: DownloadProgress) {
     const {item} = dl;
@@ -58,9 +61,6 @@ export default function DownloadsScreen() {
       pairedItem: paired?.item,
     });
   }
-  const failed = downloads.filter(
-    d => d.status === 'error' || d.status === 'cancelled',
-  );
 
   return (
     <View style={styles.container}>

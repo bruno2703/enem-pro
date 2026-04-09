@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import {View, ScrollView, StyleSheet, Linking, Alert, TouchableOpacity} from 'react-native';
+import {View, ScrollView, StyleSheet, Alert, TouchableOpacity} from 'react-native';
 import {Text, Card, Switch, Button, Divider} from 'react-native-paper';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';
@@ -11,6 +11,7 @@ import {
   getStorageUsed,
   deleteAllDownloads,
 } from '../services/downloadService';
+import {APP_VERSION} from '../appInfo';
 
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -113,7 +114,7 @@ export default function ConfigScreen() {
           <View style={styles.row}>
             <Text variant="bodyLarge">Versão do app</Text>
             <Text variant="bodyMedium" style={styles.subtitle}>
-              1.0.0
+              {APP_VERSION}
             </Text>
           </View>
           <Divider style={styles.divider} />
@@ -123,18 +124,7 @@ export default function ConfigScreen() {
             onPress={() => navigation.navigate('SobreLegal')}
             contentStyle={styles.btnContent}
             textColor="#333">
-            Fontes e avisos legais
-          </Button>
-          <Divider style={styles.divider} />
-          <Button
-            mode="text"
-            icon="code-tags"
-            onPress={() =>
-              Linking.openURL('https://github.com')
-            }
-            contentStyle={styles.btnContent}
-            textColor="#333">
-            Código aberto / Licenças
+            Privacidade, fontes e licenças
           </Button>
         </Card.Content>
       </Card>

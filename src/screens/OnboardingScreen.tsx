@@ -2,9 +2,8 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Text, Button} from 'react-native-paper';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {createMMKV} from 'react-native-mmkv';
+import {storage} from '../services/storage';
 
-const storage = createMMKV({id: 'enem-pro'});
 const ONBOARDING_KEY = 'onboarding_done';
 
 export function isOnboardingDone(): boolean {
@@ -20,7 +19,7 @@ interface Props {
 }
 
 const features = [
-  {icon: 'download', text: 'Baixe provas de 2017 a 2025'},
+  {icon: 'download', text: 'Baixe provas e gabaritos oficiais do ENEM'},
   {icon: 'visibility', text: 'Leia offline, sem internet'},
   {icon: 'quiz', text: 'Treine com simulados e veja seu desempenho'},
 ];

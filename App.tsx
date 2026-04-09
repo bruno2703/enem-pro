@@ -5,6 +5,7 @@ import {PaperProvider, MD3LightTheme} from 'react-native-paper';
 import BootSplash from 'react-native-bootsplash';
 import AppNavigator from './src/navigation/AppNavigator';
 import OnboardingScreen, {isOnboardingDone} from './src/screens/OnboardingScreen';
+import ErrorBoundary from './src/components/ErrorBoundary';
 
 const theme = {
   ...MD3LightTheme,
@@ -27,11 +28,13 @@ export default function App() {
     <SafeAreaProvider>
       <PaperProvider theme={theme}>
         <StatusBar barStyle="dark-content" backgroundColor="#FAFAFA" />
-        {showOnboarding ? (
-          <OnboardingScreen onFinish={() => setShowOnboarding(false)} />
-        ) : (
-          <AppNavigator />
-        )}
+        <ErrorBoundary>
+          {showOnboarding ? (
+            <OnboardingScreen onFinish={() => setShowOnboarding(false)} />
+          ) : (
+            <AppNavigator />
+          )}
+        </ErrorBoundary>
       </PaperProvider>
     </SafeAreaProvider>
   );

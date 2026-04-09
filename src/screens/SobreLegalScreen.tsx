@@ -1,8 +1,14 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Linking} from 'react-native';
 import {Text, Card, Button, Divider} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import type {RootStackParamList} from '../navigation/AppNavigator';
+import {APP_VERSION, APP_NAME} from '../appInfo';
 
 export default function SobreLegalScreen() {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       {/* Aviso principal */}
@@ -82,33 +88,87 @@ export default function SobreLegalScreen() {
         </Card.Content>
       </Card>
 
-      {/* Licenças open source */}
+      {/* Privacidade */}
+      <Card style={styles.card}>
+        <Card.Content>
+          <Text variant="titleMedium" style={styles.sectionTitle}>
+            Privacidade
+          </Text>
+          <Text variant="bodyMedium" style={styles.text}>
+            O Enem Pro respeita sua privacidade ao máximo:
+          </Text>
+          <Text variant="bodyMedium" style={[styles.text, styles.mt]}>
+            • <Text style={styles.bold}>Sem cadastro ou login.</Text> Você
+            usa o app de forma totalmente anônima.
+          </Text>
+          <Text variant="bodyMedium" style={[styles.text, styles.mt]}>
+            • <Text style={styles.bold}>Sem analytics ou rastreamento.</Text>{' '}
+            Não coletamos seu uso, sua localização nem seu dispositivo.
+          </Text>
+          <Text variant="bodyMedium" style={[styles.text, styles.mt]}>
+            • <Text style={styles.bold}>Tudo é armazenado localmente.</Text>{' '}
+            Histórico de simulados, downloads e preferências ficam apenas no
+            seu celular.
+          </Text>
+          <Text variant="bodyMedium" style={[styles.text, styles.mt]}>
+            • <Text style={styles.bold}>Conexões externas:</Text> o app só
+            faz requisições ao site do INEP (para baixar PDFs) e ao serviço
+            público enem.dev (para gabaritos). Nenhum dado pessoal é enviado.
+          </Text>
+          <Text variant="bodyMedium" style={[styles.text, styles.mt]}>
+            • <Text style={styles.bold}>Sem compartilhamento.</Text> Nada é
+            enviado a terceiros, anunciantes ou serviços de análise.
+          </Text>
+        </Card.Content>
+      </Card>
+
+      {/* Software de código aberto */}
       <Card style={styles.card}>
         <Card.Content>
           <Text variant="titleMedium" style={styles.sectionTitle}>
             Software de Código Aberto
           </Text>
           <Text variant="bodyMedium" style={styles.text}>
-            Este app utiliza as seguintes bibliotecas open source:
+            Este app utiliza diversas bibliotecas open source. Consulte a
+            lista completa com versões e licenças.
           </Text>
-          {[
-            'React Native — MIT License',
-            'React Navigation — MIT License',
-            'React Native Paper — MIT License',
-            'React Native MMKV — MIT License',
-            'React Native Blob Util — MIT License',
-            'React Native WebView — MIT License',
-            'pdf.js (Mozilla) — Apache 2.0 License',
-          ].map((lib, i) => (
-            <Text key={i} variant="bodySmall" style={styles.libText}>
-              • {lib}
-            </Text>
-          ))}
+          <Button
+            mode="text"
+            icon="code-tags"
+            onPress={() => navigation.navigate('Licenses')}
+            contentStyle={styles.linkContent}
+            textColor="#1565C0">
+            Ver bibliotecas
+          </Button>
+        </Card.Content>
+      </Card>
+
+      {/* Contato */}
+      <Card style={styles.card}>
+        <Card.Content>
+          <Text variant="titleMedium" style={styles.sectionTitle}>
+            Contato e Suporte
+          </Text>
+          <Text variant="bodyMedium" style={styles.text}>
+            Encontrou um problema, tem uma sugestão ou precisa de ajuda?
+          </Text>
+          <Button
+            mode="text"
+            icon="email-outline"
+            onPress={() =>
+              Linking.openURL(
+                'mailto:zenitiumstudio@gmail.com?subject=Enem%20Pro%20-%20Suporte',
+              )
+            }
+            contentStyle={styles.linkContent}
+            textColor="#1565C0">
+            zenitiumstudio@gmail.com
+          </Button>
         </Card.Content>
       </Card>
 
       <Text variant="bodySmall" style={styles.footer}>
-        Enem Pro v1.0.0
+        {APP_NAME} v{APP_VERSION}
       </Text>
     </ScrollView>
   );
@@ -125,6 +185,5 @@ const styles = StyleSheet.create({
   bold: {fontWeight: 'bold', color: '#333'},
   linkContent: {justifyContent: 'flex-start'},
   divider: {marginVertical: 8},
-  libText: {color: '#666', marginTop: 4, marginLeft: 8},
   footer: {textAlign: 'center', color: '#999', marginTop: 16},
 });

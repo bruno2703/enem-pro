@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {View, SectionList, StyleSheet, Alert} from 'react-native';
 import {Text, Card, Button, Chip} from 'react-native-paper';
-import {enqueueDownload, enqueueMultiple, isDownloaded, addDownloadListener} from '../services/downloadService';
+import {
+  enqueueDownload,
+  enqueueMultiple,
+  isDownloaded,
+  addDownloadListener,
+  DownloadProgress,
+} from '../services/downloadService';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
 import type {ManifestItem} from '../types/manifest';
@@ -93,11 +99,10 @@ function groupItems(items: ManifestItem[]): Section[] {
 export default function DetalhesAnoScreen({route, navigation}: Props) {
   const {ano, items} = route.params;
   const sections = groupItems(items);
-  const [, setTick] = useState(0);
+  const [, setDownloads] = useState<DownloadProgress[]>([]);
 
-  useEffect(() => {
-    return addDownloadListener(() => setTick(t => t + 1));
-  }, []);
+  // Re-renderiza quando o estado da fila muda (download concluído etc).
+  useEffect(() => addDownloadListener(setDownloads), []);
 
   function handlePress(pressedItem: ManifestItem, pairedItem?: ManifestItem) {
     if (isDownloaded(pressedItem.url)) {

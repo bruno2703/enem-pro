@@ -1,0 +1,98 @@
+[
+  {
+    "name": "@react-native-community/netinfo",
+    "version": "12.0.1",
+    "license": "MIT",
+    "repository": "https://github.com/react-native-netinfo/react-native-netinfo"
+  },
+  {
+    "name": "@react-native/new-app-screen",
+    "version": "0.84.1",
+    "license": "MIT",
+    "repository": "https://github.com/facebook/react-native"
+  },
+  {
+    "name": "@react-navigation/bottom-tabs",
+    "version": "7.15.8",
+    "license": "MIT",
+    "repository": "https://github.com/react-navigation/react-navigation"
+  },
+  {
+    "name": "@react-navigation/native",
+    "version": "7.2.1",
+    "license": "MIT",
+    "repository": "https://github.com/react-navigation/react-navigation"
+  },
+  {
+    "name": "@react-navigation/native-stack",
+    "version": "7.14.9",
+    "license": "MIT",
+    "repository": "https://github.com/react-navigation/react-navigation"
+  },
+  {
+    "name": "react",
+    "version": "19.2.3",
+    "license": "MIT",
+    "repository": "https://github.com/facebook/react"
+  },
+  {
+    "name": "react-native",
+    "version": "0.84.1",
+    "license": "MIT",
+    "repository": "https://github.com/facebook/react-native"
+  },
+  {
+    "name": "react-native-blob-util",
+    "version": "0.24.7",
+    "license": "MIT",
+    "repository": "https://github.com/RonRadtke/react-native-blob-util"
+  },
+  {
+    "name": "react-native-bootsplash",
+    "version": "7.2.0",
+    "license": "MIT",
+    "repository": "https://github.com/zoontek/react-native-bootsplash"
+  },
+  {
+    "name": "react-native-mmkv",
+    "version": "4.3.0",
+    "license": "MIT",
+    "repository": "https://github.com/mrousavy/react-native-mmkv"
+  },
+  {
+    "name": "react-native-nitro-modules",
+    "version": "0.35.2",
+    "license": "MIT",
+    "repository": "https://github.com/mrousavy/nitro"
+  },
+  {
+    "name": "react-native-paper",
+    "version": "5.15.0",
+    "license": "MIT",
+    "repository": "https://github.com/callstack/react-native-paper"
+  },
+  {
+    "name": "react-native-safe-area-context",
+    "version": "5.7.0",
+    "license": "MIT",
+    "repository": "https://github.com/AppAndFlow/react-native-safe-area-context"
+  },
+  {
+    "name": "react-native-screens",
+    "version": "4.24.0",
+    "license": "MIT",
+    "repository": "https://github.com/software-mansion/react-native-screens"
+  },
+  {
+    "name": "react-native-vector-icons",
+    "version": "10.3.0",
+    "license": "MIT",
+    "repository": "https://github.com/oblador/react-native-vector-icons"
+  },
+  {
+    "name": "react-native-webview",
+    "version": "13.16.1",
+    "license": "MIT",
+    "repository": "https://github.com/react-native-webview/react-native-webview"
+  }
+]

@@ -7,20 +7,23 @@ import type {RootStackParamList} from '../navigation/AppNavigator';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'CorrecaoDetalhada'>;
 
+const areaLabels: Record<string, string> = {
+  linguagens: 'Linguagens',
+  humanas: 'Humanas',
+  natureza: 'Natureza',
+  matematica: 'Matemática',
+};
+
+interface Row {
+  num: number;
+  area: string;
+  showAreaHeader: boolean;
+}
+
 export default function CorrecaoDetalhadaScreen({route}: Props) {
   const {result, filterArea} = route.params;
   const {config, respostas} = result;
 
-  const allQuestions = Array.from({length: config.totalQuestoes}, (_, i) => i + 1);
-  const questions = filterArea && config.areas[filterArea]
-    ? allQuestions.filter(
-        n =>
-          n >= config.areas[filterArea].inicio &&
-          n <= config.areas[filterArea].fim,
-      )
-    : allQuestions;
-
-  // Find which area a question belongs to
   function getArea(num: number): string {
     for (const [area, range] of Object.entries(config.areas)) {
       if (num >= range.inicio && num <= range.fim) return area;
@@ -28,29 +31,38 @@ export default function CorrecaoDetalhadaScreen({route}: Props) {
     return '';
   }
 
-  const areaLabels: Record<string, string> = {
-    linguagens: 'Linguagens',
-    humanas: 'Humanas',
-    natureza: 'Natureza',
-    matematica: 'Matemática',
-  };
-
-  let lastArea = '';
+  // Pré-computa rows com flag de cabeçalho — evita state mutável durante render
+  const rows: Row[] = React.useMemo(() => {
+    const all = Array.from({length: config.totalQuestoes}, (_, i) => i + 1);
+    const filtered =
+      filterArea && config.areas[filterArea]
+        ? all.filter(
+            n =>
+              n >= config.areas[filterArea].inicio &&
+              n <= config.areas[filterArea].fim,
+          )
+        : all;
+    let lastArea = '';
+    return filtered.map(num => {
+      const area = getArea(num);
+      const showAreaHeader = area !== lastArea;
+      lastArea = area;
+      return {num, area, showAreaHeader};
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [config, filterArea]);
 
   return (
     <FlatList
       style={styles.container}
-      data={questions}
-      keyExtractor={item => item.toString()}
-      getItemLayout={(_, index) => ({length: 48, offset: 48 * index, index})}
-      renderItem={({item: num}) => {
+      data={rows}
+      keyExtractor={row => row.num.toString()}
+      renderItem={({item: row}) => {
+        const {num, area, showAreaHeader} = row;
         const resp = respostas[num] ?? null;
         const correto = config.gabarito[num - 1];
         const acertou = resp === correto;
         const branco = resp === null;
-        const area = getArea(num);
-        const showAreaHeader = area !== lastArea;
-        lastArea = area;
 
         return (
           <>

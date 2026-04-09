@@ -1,7 +1,5 @@
-import {createMMKV} from 'react-native-mmkv';
 import type {ManifestItem} from '../types/manifest';
-
-const storage = createMMKV({id: 'enem-pro'});
+import {storage} from './storage';
 const FAVORITES_KEY = 'favorites'; // JSON array of ManifestItem
 const HISTORY_KEY = 'history'; // JSON array of {item, openedAt, lastPage}
 
