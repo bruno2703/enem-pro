@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import {View, ScrollView, StyleSheet, Alert, TouchableOpacity} from 'react-native';
+import {View, ScrollView, StyleSheet, Alert, TouchableOpacity, Linking} from 'react-native';
 import {Text, Card, Switch, Button, Divider} from 'react-native-paper';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation, useFocusEffect} from '@react-navigation/native';
@@ -12,6 +12,7 @@ import {
   deleteAllDownloads,
 } from '../services/downloadService';
 import {APP_VERSION} from '../appInfo';
+import {isPro} from '../services/proService';
 
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -57,6 +58,41 @@ export default function ConfigScreen() {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      {/* Premium */}
+      {!isPro() ? (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Pro')}
+          style={styles.proCard}
+          activeOpacity={0.8}>
+          <Text style={styles.proEmoji}>⭐</Text>
+          <View style={styles.proInfo}>
+            <Text variant="titleSmall" style={styles.proTitle}>
+              Enem Pro Premium
+            </Text>
+            <Text variant="bodySmall" style={styles.proSubtitle}>
+              Correção detalhada, histórico ilimitado e mais
+            </Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color="#fff" />
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Pro')}
+          style={styles.proCardActive}
+          activeOpacity={0.8}>
+          <MaterialIcons name="verified" size={24} color="#43A047" />
+          <View style={styles.proInfo}>
+            <Text variant="titleSmall" style={styles.proActiveTitle}>
+              Premium ativo
+            </Text>
+            <Text variant="bodySmall" style={styles.proActiveSubtitle}>
+              Ver detalhes e gerenciar assinatura
+            </Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={20} color="#888" />
+        </TouchableOpacity>
+      )}
+
       {/* Downloads */}
       <Text variant="labelLarge" style={styles.sectionLabel}>
         DOWNLOADS
@@ -73,7 +109,13 @@ export default function ConfigScreen() {
           </View>
           <Divider style={styles.divider} />
           <TouchableOpacity
-            onPress={() => navigation.navigate('Storage')}
+            onPress={() => {
+              if (isPro()) {
+                navigation.navigate('Storage');
+              } else {
+                navigation.navigate('Pro');
+              }
+            }}
             style={styles.row}
             activeOpacity={0.6}>
             <View>
@@ -82,7 +124,11 @@ export default function ConfigScreen() {
                 {formatBytes(storageUsed)}
               </Text>
             </View>
-            <MaterialIcons name="chevron-right" size={24} color="#999" />
+            <MaterialIcons
+              name={isPro() ? 'chevron-right' : 'lock-outline'}
+              size={24}
+              color={isPro() ? '#999' : '#FF8F00'}
+            />
           </TouchableOpacity>
           <Divider style={styles.divider} />
           <Button
@@ -141,6 +187,30 @@ export default function ConfigScreen() {
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: '#FAFAFA'},
   content: {padding: 16, paddingBottom: 32},
+  proCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#1565C0',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    elevation: 3,
+  },
+  proEmoji: {fontSize: 28, marginRight: 12},
+  proInfo: {flex: 1},
+  proTitle: {fontWeight: 'bold', color: '#fff'},
+  proSubtitle: {color: '#B3D4FC', marginTop: 2},
+  proCardActive: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#E8F5E9',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    elevation: 1,
+  },
+  proActiveTitle: {fontWeight: 'bold', color: '#43A047'},
+  proActiveSubtitle: {color: '#888', marginTop: 2},
   sectionLabel: {
     color: '#888',
     marginTop: 16,

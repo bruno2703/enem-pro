@@ -8,6 +8,9 @@ import {isDownloaded} from '../services/downloadService';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import type {ManifestItem} from '../types/manifest';
 import type {RootStackParamList} from '../navigation/AppNavigator';
+import {BannerAd, BannerAdSize} from 'react-native-google-mobile-ads';
+import {BANNER_ID} from '../services/adService';
+import {isPro} from '../services/proService';
 
 interface AnoInfo {
   ano: number;
@@ -118,6 +121,14 @@ export default function CatalogoScreen() {
           </Card>
         )}
       />
+      {!isPro() && (
+        <View style={styles.adContainer}>
+          <BannerAd
+            unitId={BANNER_ID}
+            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          />
+        </View>
+      )}
     </View>
   );
 }
@@ -146,4 +157,5 @@ const styles = StyleSheet.create({
   anoText: {fontWeight: 'bold', color: '#1565C0'},
   arquivosText: {marginTop: 4, color: '#888'},
   badgeRow: {flexDirection: 'row', alignItems: 'center', marginTop: 6},
+  adContainer: {alignItems: 'center', backgroundColor: '#FAFAFA'},
 });

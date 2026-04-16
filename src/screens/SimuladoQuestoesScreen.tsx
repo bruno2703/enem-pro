@@ -21,6 +21,7 @@ import {
   getSimuladoProgress,
   SavedProgress,
 } from '../services/simuladoService';
+import {loadInterstitial, showInterstitial} from '../services/adService';
 
 function getConfigKey(config: any): string {
   return `${config.ano}_${config.dia}_${config.caderno}_${config.lingua}`;
@@ -44,7 +45,7 @@ function formatTime(seconds: number): string {
 // Splita por imagens e alterna texto/imagem.
 function ContentRenderer({content}: {content: string}) {
   if (!content) return null;
-  const parts: Array<{type: 'text' | 'image'; value: string}> = [];
+  const parts: Array<{type: 'text' | 'image' | 'missing_image'; value: string}> = [];
   const regex = /!\[[^\]]*\]\(([^)]+)\)/g;
   let lastIdx = 0;
   let m: RegExpExecArray | null;
@@ -52,7 +53,12 @@ function ContentRenderer({content}: {content: string}) {
     if (m.index > lastIdx) {
       parts.push({type: 'text', value: content.slice(lastIdx, m.index)});
     }
-    parts.push({type: 'image', value: m[1]});
+    const url = m[1];
+    if (url.includes('broken-image') || url.endsWith('.svg')) {
+      parts.push({type: 'missing_image', value: ''});
+    } else {
+      parts.push({type: 'image', value: url});
+    }
     lastIdx = m.index + m[0].length;
   }
   if (lastIdx < content.length) {
@@ -69,6 +75,13 @@ function ContentRenderer({content}: {content: string}) {
             style={styles.image}
             resizeMode="contain"
           />
+        ) : p.type === 'missing_image' ? (
+          <View key={i} style={styles.missingImage}>
+            <Text style={styles.missingImageIcon}>🖼️</Text>
+            <Text style={styles.missingImageText}>
+              Imagem indisponível — consulte o PDF da prova
+            </Text>
+          </View>
         ) : (
           <Text key={i} style={styles.contextText}>
             {p.value.trim()}
@@ -105,6 +118,11 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
   );
   const scrollRef = useRef<ScrollView>(null);
   const insets = useSafeAreaInsets();
+
+  // Pré-carrega interstitial pro momento de finalizar
+  useEffect(() => {
+    loadInterstitial();
+  }, []);
 
   // Salvar progresso a cada mudança
   useEffect(() => {
@@ -176,7 +194,7 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
     );
   }
 
-  function calcularResultado() {
+  async function calcularResultado() {
     let acertos = 0;
     let erros = 0;
     let brancos = 0;
@@ -205,6 +223,9 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
     saveSimuladoResult(result);
     clearSimuladoProgress();
 
+    // Mostra interstitial antes do resultado (Pro não vê anúncio)
+    await showInterstitial();
+
     navigation.replace('SimuladoResultado', {result});
   }
 
@@ -216,7 +237,7 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
   return (
     <View style={styles.container}>
       {/* Top bar */}
-      <View style={styles.topBar}>
+      <View style={[styles.topBar, {paddingTop: insets.top}]}>
         <View style={styles.topBarLeft}>
           <IconButton
             icon="arrow-left"
@@ -298,11 +319,18 @@ export default function SimuladoQuestoesScreen({route, navigation}: Props) {
                         <Text style={styles.altText}>{alt.text}</Text>
                       ) : null}
                       {alt.file ? (
-                        <Image
-                          source={{uri: alt.file}}
-                          style={styles.altImage}
-                          resizeMode="contain"
-                        />
+                        alt.file.includes('broken-image') ||
+                        alt.file.endsWith('.svg') ? (
+                          <Text style={styles.missingImageSmall}>
+                            [Imagem indisponível]
+                          </Text>
+                        ) : (
+                          <Image
+                            source={{uri: alt.file}}
+                            style={styles.altImage}
+                            resizeMode="contain"
+                          />
+                        )
                       ) : null}
                     </View>
                   </TouchableOpacity>
@@ -504,6 +532,19 @@ const styles = StyleSheet.create({
   },
   missingTitle: {fontWeight: 'bold', color: '#FF8F00', marginBottom: 4},
   missingText: {color: '#666', marginBottom: 12},
+  missingImage: {
+    backgroundColor: '#F5F5F5',
+    borderRadius: 8,
+    padding: 16,
+    marginVertical: 8,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
+    borderStyle: 'dashed',
+  },
+  missingImageIcon: {fontSize: 24, marginBottom: 4},
+  missingImageText: {color: '#888', fontSize: 13, textAlign: 'center'},
+  missingImageSmall: {color: '#999', fontSize: 12, fontStyle: 'italic', marginTop: 4},
   fallbackRow: {flexDirection: 'row', justifyContent: 'space-around'},
   bubble: {
     width: 44,

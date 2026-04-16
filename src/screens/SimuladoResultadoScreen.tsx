@@ -3,6 +3,7 @@ import {View, ScrollView, StyleSheet} from 'react-native';
 import {Text, Card, Button, ProgressBar, IconButton} from 'react-native-paper';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {RootStackParamList} from '../navigation/AppNavigator';
+import {isPro} from '../services/proService';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SimuladoResultado'>;
 
@@ -73,9 +74,13 @@ export default function SimuladoResultadoScreen({route, navigation}: Props) {
           <Card
             key={area}
             style={styles.areaCard}
-            onPress={() =>
-              navigation.navigate('CorrecaoDetalhada', {result, filterArea: area})
-            }>
+            onPress={() => {
+              if (isPro()) {
+                navigation.navigate('CorrecaoDetalhada', {result, filterArea: area});
+              } else {
+                navigation.navigate('Pro');
+              }
+            }}>
             <Card.Content>
               <View style={styles.areaRow}>
                 <Text variant="bodyMedium" style={styles.areaLabel}>
@@ -121,9 +126,16 @@ export default function SimuladoResultadoScreen({route, navigation}: Props) {
       {/* Botões */}
       <Button
         mode="outlined"
-        onPress={() => navigation.navigate('CorrecaoDetalhada', {result})}
+        onPress={() => {
+          if (isPro()) {
+            navigation.navigate('CorrecaoDetalhada', {result});
+          } else {
+            navigation.navigate('Pro');
+          }
+        }}
         style={styles.btn}
-        textColor="#1565C0">
+        textColor="#1565C0"
+        icon={isPro() ? undefined : 'lock-outline'}>
         Ver questões individuais
       </Button>
       <Button

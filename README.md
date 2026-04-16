@@ -1,97 +1,164 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<div align="center">
 
-# Getting Started
+<img src="docs/screenshots/EnemPro-PlayStore-Icon-512.png" width="120" alt="Enem Pro logo">
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+# Enem Pro
 
-## Step 1: Start Metro
+**App Android para estudo do ENEM com provas oficiais offline e simulados cronometrados.**
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+[![Made with React Native](https://img.shields.io/badge/React%20Native-0.84-61DAFB?logo=react&logoColor=white)](https://reactnative.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Privacy First](https://img.shields.io/badge/Privacy-First-43A047)](docs/privacy-policy.html)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+</div>
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+## Sobre
+
+O **Enem Pro** é um app Android nativo que reúne provas e gabaritos oficiais do ENEM (2017–2025), permite leitura offline e oferece um modo simulado completo com correção automática contra o gabarito oficial.
+
+Foi desenvolvido como um produto real (publicado na Play Store) e como um portfólio técnico mostrando arquitetura de app moderno em React Native — com privacidade radical, modelo freemium funcional e zero dependência de backend próprio.
+
+## Screenshots
+
+<div align="center">
+
+| Catálogo de provas | Resultado de simulado |
+|---|---|
+| <img src="docs/screenshots/1.png" width="240"> | <img src="docs/screenshots/2.png" width="240"> |
+
+</div>
+
+## Funcionalidades
+
+### Versão gratuita
+- Catálogo de provas do ENEM por ano e cor de caderno
+- Download sob demanda dos PDFs oficiais (HTTP fallback pro INEP)
+- Leitor de PDF com modo leitura imersivo (chrome auto-hide)
+- Histórico de simulados (últimos 3)
+- Simulado completo (até 90 questões) com texto, imagens e alternativas
+- Simulado por área (Linguagens, Humanas, Natureza, Matemática)
+- Gabarito oficial INEP para correção
+- Cronômetro e progresso salvos automaticamente
+- Resultado por área de conhecimento
+- 100% offline depois do download (apenas o catálogo é fetch)
+
+### Versão Premium (R$ 8,90/mês via Google Play Billing)
+- Correção detalhada questão por questão
+- Histórico ilimitado de simulados
+- Detalhamento de armazenamento por ano e por tipo
+- Sem anúncios
+
+## Stack
+
+| Camada | Tecnologia |
+|---|---|
+| **Mobile** | React Native 0.84, TypeScript |
+| **UI** | React Native Paper (Material Design 3) |
+| **Navigation** | React Navigation 7 (stack + tabs) |
+| **Storage** | MMKV (key-value síncrono nativo) |
+| **PDF** | WebView + pdf.js (Mozilla, bundled local) |
+| **Downloads** | react-native-blob-util |
+| **Splash** | react-native-bootsplash |
+| **Anúncios** | Google AdMob (banner + interstitial) |
+| **IAP** | Google Play Billing (planejado) |
+
+## Arquitetura
+
+```
+src/
+├── appInfo.ts              # Constantes globais (versão, nome)
+├── assets/                 # Manifest de PDFs, gabaritos, questões, licenças
+├── components/             # ErrorBoundary global
+├── navigation/             # Stack + bottom tabs tipados
+├── screens/                # 14 telas
+├── services/               # Lógica de negócio sem React
+│   ├── storage.ts          # Singleton MMKV
+│   ├── downloadService.ts  # Fila de downloads + persistência
+│   ├── manifestService.ts  # Catálogo de PDFs (bundled)
+│   ├── gabaritoService.ts  # Respostas oficiais
+│   ├── questoesService.ts  # Texto e alternativas (via enem.dev)
+│   ├── simuladoService.ts  # Histórico e progresso de simulados
+│   ├── proService.ts       # Status freemium
+│   └── adService.ts        # Banner e interstitial
+└── types/                  # Tipos TypeScript
 ```
 
-## Step 2: Build and run your app
+### Decisões importantes
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- **Sem backend próprio.** Todos os dados (PDFs, gabaritos, questões) vêm de fontes públicas. O catálogo é embutido no bundle.
+- **Privacidade radical.** Zero analytics, zero login, zero coleta. Tudo armazenado localmente em MMKV.
+- **HTTP em vez de HTTPS pro INEP** — o servidor `download.inep.gov.br` tem certificado SSL inválido. Workaround documentado em `network_security_config.xml`.
+- **WebView + pdf.js em vez de react-native-pdf** — a lib nativa quebra com OOM ao paginar PDFs grandes do INEP.
+- **Manifest bundled em vez de fetch remoto** — adicionar/remover provas requer rebuild, mas elimina latência e dependência externa pro catálogo.
+- **Scripts de build próprios** (`scripts/build-licenses.js`, `build-questoes.js`, `build-gabaritos.js`) geram assets a partir de fontes externas em build-time.
+- **Singleton MMKV** evita instâncias duplicadas e centraliza persistência.
+- **ErrorBoundary global** captura crashes no nível do app.
 
-### Android
+## Como rodar localmente
 
-```sh
-# Using npm
-npm run android
+### Pré-requisitos
+- Node.js 20+
+- JDK 17
+- Android SDK 34
+- ADB
 
-# OR using Yarn
-yarn android
+### Setup
+```bash
+git clone https://github.com/bruno2703/enem-pro.git
+cd enem-pro
+npm install
+
+# Conecta o celular Android via USB ou Wi-Fi (adb tcpip + connect)
+adb devices
+
+# Inicia o Metro bundler
+npx react-native start
+
+# Em outro terminal: builda e instala
+npx react-native run-android
 ```
 
-### iOS
+### Build de release (assinado)
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+Crie `android/keystore.properties`:
+```properties
+storeFile=/caminho/para/sua.keystore
+storePassword=...
+keyAlias=...
+keyPassword=...
 ```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
+E rode:
+```bash
+cd android
+./gradlew bundleRelease   # AAB para Play Store
+./gradlew assembleRelease # APK
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## Roadmap
 
-```sh
-# Using npm
-npm run ios
+- [x] Catálogo de PDFs e download offline
+- [x] Leitor de PDF com modo leitura
+- [x] Simulado com questões reais (texto + imagens + alternativas)
+- [x] Histórico e correção por área
+- [x] Modelo freemium (gates implementados)
+- [x] Anúncios AdMob (test IDs)
+- [ ] Google Play Billing (IAP real)
+- [ ] Adaptive icons
+- [ ] Versão iOS
+- [ ] Modo escuro
 
-# OR using Yarn
-yarn ios
-```
+## Aviso legal
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+O Enem Pro **não é** um aplicativo oficial e **não possui vínculo** com o INEP, MEC ou Governo Federal do Brasil. É uma ferramenta independente de estudo que facilita o acesso a materiais públicos disponibilizados pelo INEP sob licença Creative Commons.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Licença
 
-## Step 3: Modify your app
+[MIT](LICENSE) — sinta-se livre pra ler, estudar, fazer fork e aprender. A marca "Enem Pro", o ícone e a publicação na Google Play são propriedade da Zenitium Studio.
 
-Now that you have successfully run the app, let's make changes!
+## Contato
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+[zenitiumstudio@gmail.com](mailto:zenitiumstudio@gmail.com)

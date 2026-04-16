@@ -44,6 +44,9 @@ yarn-error.log
 # secrets / env
 .env
 .env.*
+android/keystore.properties
+*.keystore
+!debug.keystore
 
 # fastlane
 #
@@ -59,6 +62,7 @@ yarn-error.log
 
 # Bundle artifact
 *.jsbundle
+android/app/src/main/assets/index.android.bundle
 
 # Ruby / CocoaPods
 **/Pods/

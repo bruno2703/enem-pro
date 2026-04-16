@@ -11,6 +11,7 @@ import {
   getSimuladoProgress,
   clearSimuladoProgress,
 } from '../services/simuladoService';
+import {isPro} from '../services/proService';
 
 const CADERNO_FIXO = 'CD1';
 
@@ -26,6 +27,7 @@ export default function TreinoScreen() {
   const [areaEscolhida, setAreaEscolhida] = useState<string | null>(null);
 
   const [historico, setHistorico] = useState(getSimuladoHistorico());
+  const [historicoExpandido, setHistoricoExpandido] = useState(false);
 
   // State for in-progress simulado
   const [savedProgress, setSavedProgress] = useState<any>(null);
@@ -299,16 +301,23 @@ export default function TreinoScreen() {
             <Text variant="titleMedium" style={styles.historicoTitle}>
               Histórico
             </Text>
-            {historico.length > 5 && (
+            {historico.length > 3 && (
               <Button
                 mode="text"
                 compact
-                onPress={() => navigation.navigate('Historico')}>
-                Ver tudo
+                onPress={() => {
+                  if (isPro()) {
+                    setHistoricoExpandido(prev => !prev);
+                  } else {
+                    navigation.navigate('Pro');
+                  }
+                }}
+                icon={!isPro() ? 'lock-outline' : historicoExpandido ? 'chevron-up' : 'chevron-down'}>
+                {!isPro() ? 'Ver tudo' : historicoExpandido ? 'Retrair' : 'Ver tudo'}
               </Button>
             )}
           </View>
-          {historico.slice(0, 5).map((r, i) => (
+          {(historicoExpandido ? historico : historico.slice(0, 3)).map((r, i) => (
             <Card
               key={i}
               style={styles.historicoCard}
