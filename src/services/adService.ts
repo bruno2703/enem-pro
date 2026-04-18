@@ -1,10 +1,13 @@
 import {InterstitialAd, AdEventType, TestIds} from 'react-native-google-mobile-ads';
 import {isPro} from './proService';
 
-// TODO: Substituir por IDs reais do AdMob quando a conta estiver pronta.
-// Test IDs do Google — mostram anúncios de teste em qualquer dispositivo.
-export const BANNER_ID = TestIds.ADAPTIVE_BANNER;
-export const INTERSTITIAL_ID = TestIds.INTERSTITIAL;
+// IDs reais do AdMob. Em dev (__DEV__), usa test IDs pra não violar políticas.
+export const BANNER_ID = __DEV__
+  ? TestIds.ADAPTIVE_BANNER
+  : 'ca-app-pub-5582147484257850/1513571457';
+export const INTERSTITIAL_ID = __DEV__
+  ? TestIds.INTERSTITIAL
+  : 'ca-app-pub-5582147484257850/9138886397';
 
 // Interstitial pré-carregado
 let interstitial = InterstitialAd.createForAdRequest(INTERSTITIAL_ID);
